@@ -60,6 +60,19 @@
       shape_requirements: "3+ Diamonds"
       evaluation_method: "HCP"
 
+  - bid: "1S"
+    type: "Opening"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-21 HCP, 5+ Spades."
+    explanation: "Major suit opening."
+    constraints:
+      min_hcp: 12
+      max_hcp: 21
+      shape_requirements: "5+ Spades"
+      evaluation_method: "HCP"
+
 "1H - 1S":
   - bid: "1NT"
     type: "Rebid"
@@ -418,14 +431,13 @@
     convention: "Simple Raise"
     complexity: "Basic"
     forcing_status: "Non-Forcing"
-    inference: "6-10 Dummy Points, 3+ Spades."
-    explanation: "A minimum raise showing a fit and 6-10 points."
-    hint_on_miss: "With 3+ Spades and minimum values, raise directly to 2S."
+    inference: "6-9 HCP, 3+ Spades."
+    explanation: "A minimum raise showing a fit."
     constraints:
-      min_dummy_points: 6
-      max_dummy_points: 10
+      min_hcp: 6
+      max_hcp: 9
       shape_requirements: "3+ Spades"
-      evaluation_method: "Dummy Points"
+      evaluation_method: "HCP"
 
   - bid: "2NT"
     type: "Response"

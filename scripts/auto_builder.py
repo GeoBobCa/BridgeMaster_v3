@@ -13,25 +13,25 @@ client = genai.Client(api_key=API_KEY)
 # --- SYSTEM PROMPT (Currently set for 2nd Negative) ---
 SYSTEM_DEFINITION = """
 ### Audrey Grant Modern Standard
-(Responses to 1 Heart)
+(Responses to 1 Spade)
 
-Context: Partner opened 1H (shows 5+ Hearts, 12-21 HCP).
+Context: Partner opened 1S (shows 5+ Spades, 12-21 HCP).
 
-1. Support Bids (We have 3+ Hearts):
-   - 2H: Simple Raise. 6-9 HCP, 3+ Hearts.
-   - 3H: Limit Raise. 10-12 HCP, 3+ Hearts. Inviting.
-   - 4H: Preemptive/Weak. 0-9 HCP, 5+ Hearts (Law of Total Tricks).
+1. Support Bids (We have 3+ Spades):
+   - 2S: Simple Raise. 6-9 HCP, 3+ Spades.
+   - 3S: Limit Raise. 10-12 HCP, 3+ Spades. Inviting.
+   - 4S: Preemptive/Weak. 0-9 HCP, 5+ Spades (Law of Total Tricks).
 
 2. Game Forcing Support (Conventions):
-   - 2NT (Jacoby 2NT): 13+ HCP, 4+ Hearts. Game Forcing. Asks for shortness.
-   - 3S/4C/4D (Splinters): Double Jump Shift. Shows 4+ Hearts, Game Forcing (13+), and a singleton/void in the bid suit.
+   - 2NT (Jacoby 2NT): 13+ HCP, 4+ Spades. Game Forcing. Asks for shortness.
 
 3. No Trump (No Support):
-   - 1NT: 6-12 HCP (Semi-Forcing). Denies 3 Hearts. Denies 4 Spades.
+   - 1NT: 6-12 HCP (Semi-Forcing). Denies 3 Spades.
 
 4. New Suits (Natural):
-   - 1S: 4+ Spades, 6+ HCP. Forcing 1 Round.
-   - 2C/2D: 4+ card suit, 10+ HCP. Forcing 1 Round.
+   - 2C: 10+ HCP, 4+ Clubs. Forcing.
+   - 2D: 10+ HCP, 4+ Diamonds. Forcing.
+   - 2H: 10+ HCP, 5+ Hearts. Forcing. (Note: Requires 5 hearts normally at the 2-level).
 """
 
 def generate_auction_logic(auction_key):
