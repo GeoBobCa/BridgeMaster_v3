@@ -13,21 +13,25 @@ client = genai.Client(api_key=API_KEY)
 # --- SYSTEM PROMPT (Currently set for 2nd Negative) ---
 SYSTEM_DEFINITION = """
 ### Audrey Grant Modern Standard
-(Responder's Rebid: Fourth Suit Forcing)
+(Responses to 1 Heart)
 
-Context: Auction 1D - 1H - 1S.
-We have bid 3 suits. 
-The unbid suit is CLUBS.
+Context: Partner opened 1H (shows 5+ Hearts, 12-21 HCP).
 
-1. The Convention (Fourth Suit Forcing):
-   - 2C: Artificial. Game Forcing. 
-   - Meaning: "Partner, I have a game-forcing hand but no clear direction. Please describe your hand further (do you have a stopper in Clubs for NT?)."
-   - Requirements: 12+ HCP.
+1. Support Bids (We have 3+ Hearts):
+   - 2H: Simple Raise. 6-9 HCP, 3+ Hearts.
+   - 3H: Limit Raise. 10-12 HCP, 3+ Hearts. Inviting.
+   - 4H: Preemptive/Weak. 0-9 HCP, 5+ Hearts (Law of Total Tricks).
 
-2. Natural Bids:
-   - 2D: Preference to Opener's first suit (Weak, 6-9).
-   - 2H: Re-bidding own suit (6+ cards, Weak/Inviting).
-   - 2NT: Natural, inviting (10-12), promises Club stopper.
+2. Game Forcing Support (Conventions):
+   - 2NT (Jacoby 2NT): 13+ HCP, 4+ Hearts. Game Forcing. Asks for shortness.
+   - 3S/4C/4D (Splinters): Double Jump Shift. Shows 4+ Hearts, Game Forcing (13+), and a singleton/void in the bid suit.
+
+3. No Trump (No Support):
+   - 1NT: 6-12 HCP (Semi-Forcing). Denies 3 Hearts. Denies 4 Spades.
+
+4. New Suits (Natural):
+   - 1S: 4+ Spades, 6+ HCP. Forcing 1 Round.
+   - 2C/2D: 4+ card suit, 10+ HCP. Forcing 1 Round.
 """
 
 def generate_auction_logic(auction_key):

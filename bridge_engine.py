@@ -1,169 +1,121 @@
-# VERSION: 3.1 (Dec 28, 2025) - Object Model + Smart Keys + Quality Points
+# VERSION: 4.0 (Dec 28, 2025) - Fixes Priorities (Raises > NT) and Negative Constraints (<3 Hearts)
 import os
 import re
 from ruamel.yaml import YAML
 
 class BidResult:
-    """
-    A simple container for the Engine's decision.
-    Carries the Bid string, the Explanation, and any Teaching Alerts.
-    """
     def __init__(self, bid, explanation=None, alert=None):
         self.bid = bid
-        self.explanation = explanation  # From the YAML
-        self.alert = alert              # Runtime warnings (e.g. "Hand Upgraded")
-
-    def __str__(self):
-        return self.bid
+        self.explanation = explanation
+        self.alert = alert
+    def __str__(self): return self.bid
 
 class BridgeHand:
-    def __init__(self, spades_str, hearts_str, diamonds_str, clubs_str):
-        self.suits = {
-            'S': self._parse_suit(spades_str),
-            'H': self._parse_suit(hearts_str),
-            'D': self._parse_suit(diamonds_str),
-            'C': self._parse_suit(clubs_str)
-        }
-        self.hcp = self._calculate_hcp()
-        self.quality_hcp = self._calculate_quality()
+    def __init__(self, s, h, d, c):
+        self.suits = {'S':self._p(s), 'H':self._p(h), 'D':self._p(d), 'C':self._p(c)}
+        self.hcp = self._calc_hcp()
+        self.quality_hcp = self._calc_qual()
         self.distribution = {s: len(cards) for s, cards in self.suits.items()}
-        self.is_balanced = self._check_balanced()
+        self.is_balanced = sorted(self.distribution.values()) in [[3,3,3,4], [2,3,4,4], [2,3,3,5]]
 
-    def _parse_suit(self, card_str):
-        return list(card_str.replace(" ", "").upper())
+    def _p(self, c_str): return list(c_str.replace(" ", "").upper())
+    
+    def _calc_hcp(self):
+        val = {'A':4, 'K':3, 'Q':2, 'J':1}
+        return sum(val.get(c,0) for s in self.suits.values() for c in s)
 
-    def _calculate_hcp(self):
-        values = {'A': 4, 'K': 3, 'Q': 2, 'J': 1}
-        total = 0
-        for suit in self.suits.values():
-            for card in suit:
-                if card in values: total += values[card]
-        return total
-
-    def _calculate_quality(self):
-        # Statistical Scale: A=4.5, K=3.0, Q=1.5, J=0.75, T=0.25
-        values = {'A': 4.5, 'K': 3.0, 'Q': 1.5, 'J': 0.75, 'T': 0.25}
+    def _calc_qual(self):
+        val = {'A':4.5, 'K':3.0, 'Q':1.5, 'J':0.75, 'T':0.25}
         total = 0.0
-        for suit in self.suits.values():
-            for card in suit:
-                if card in values: total += values[card]
-                elif card == '1' and '0' in suit: total += 0.25
+        for s in self.suits.values():
+            for c in s:
+                if c in val: total += val[c]
+                elif c == '1' and '0' in s: total += 0.25
         return total
 
-    def _check_balanced(self):
-        counts = sorted(self.distribution.values())
-        return counts in [[3,3,3,4], [2,3,4,4], [2,3,3,5]]
-
-    def length_of(self, suit_char):
-        return self.distribution.get(suit_char, 0)
+    def length_of(self, suit): return self.distribution.get(suit, 0)
 
 class BiddingEngine:
-    def __init__(self, system_file_path):
+    def __init__(self, system_path):
         self.yaml = YAML()
-        if not os.path.exists(system_file_path):
-            raise FileNotFoundError(f"System file missing: {system_file_path}")
-        
-        with open(system_file_path, 'r', encoding='utf-8') as f:
+        with open(system_path, 'r', encoding='utf-8') as f:
             self.system = self.yaml.load(f)
 
-    def find_bid(self, hand, auction_history):
-        # 1. Determine candidates
-        if not auction_history:
-            candidates = self.system.get("Dealer", [])
+    def find_bid(self, hand, auction):
+        if not auction: candidates = self.system.get("Dealer", [])
         else:
-            candidates = []
-            # Try specific key first (e.g. "2C - 2D - 2H")
-            full_key = self._get_key_from_auction(auction_history)
-            if full_key in self.system:
-                candidates = self.system.get(full_key, [])
-            
-            # Fallback to last bid only (e.g. "2H")
-            if not candidates:
-                last_bid = auction_history[-1]
-                candidates = self.system.get(last_bid, [])
+            full_key = " - ".join([b for b in auction if b != "Pass"]) or "Dealer"
+            candidates = self.system.get(full_key, [])
+            if not candidates and auction:
+                candidates = self.system.get(auction[-1], [])
 
-        # 2. Find ALL valid bids
         valid_bids = []
         for node in candidates:
-            is_fit, upgrade_msg = self._does_hand_fit(hand, node.get('constraints', {}))
-            if is_fit:
-                node['_temp_alert'] = upgrade_msg 
+            fit, alert = self._does_hand_fit(hand, node.get('constraints', {}))
+            if fit:
+                node['_temp_alert'] = alert
                 valid_bids.append(node)
 
-        if not valid_bids:
-            return BidResult("Pass", "No suitable bid found.")
-
-        # 3. Apply Priority Logic
-        best_node = self._pick_best_node(hand, valid_bids)
+        if not valid_bids: return BidResult("Pass", "No suitable bid.")
         
-        return BidResult(
-            bid=best_node['bid'],
-            explanation=best_node.get('explanation', ""),
-            alert=best_node.get('_temp_alert')
-        )
+        best = self._pick_best_node(hand, valid_bids)
+        return BidResult(best['bid'], best.get('explanation'), best.get('_temp_alert'))
 
-    def _pick_best_node(self, hand, valid_nodes):
-        choices = {n['bid']: n for n in valid_nodes}
+    def _pick_best_node(self, hand, nodes):
+        choices = {n['bid']: n for n in nodes}
         bids = list(choices.keys())
 
-        # Specific Conventions check
-        if "3C" in bids and "Second Negative" in choices["3C"].get("convention", ""):
-            return choices["3C"]
+        # 1. SPECIAL CONVENTIONS
+        if "3C" in bids and "Second Negative" in choices["3C"].get("convention",""): return choices["3C"]
+        if "2NT" in bids and "Jacoby" in choices["2NT"].get("convention",""): return choices["2NT"]
 
-        # Standard Priority: Majors > NT > Minors
+        # 2. RAISES (SUPPORT) > NT
+        # If we can raise partner (2H/3H/4H/2S/3S/4S), do that before 1NT
+        for raise_bid in ["2H", "3H", "4H", "2S", "3S", "4S"]:
+            if raise_bid in bids: return choices[raise_bid]
+
+        # 3. NATURAL SUITS > NT
         if "1S" in bids: return choices["1S"]
         if "1H" in bids: return choices["1H"]
+        
+        # 4. NT IS LAST RESORT FOR MAJORS
         if "1NT" in bids: return choices["1NT"]
 
-        # Better Minor Tie-Breaker (1C vs 1D)
+        # 5. MINORS
         if "1C" in bids and "1D" in bids:
-            d_len = hand.length_of('D')
-            c_len = hand.length_of('C')
-            if d_len >= 4 and c_len >= 4: return choices["1D"]
-            if d_len == 3 and c_len == 3: return choices["1C"]
-            if d_len > c_len: return choices["1D"]
-            return choices["1C"]
-
-        return valid_nodes[0]
-
-    def _get_key_from_auction(self, auction):
-        active_bids = [b for b in auction if b != "Pass"]
-        if len(active_bids) == 0: return "Dealer"
-        return " - ".join(active_bids)
+            if hand.length_of('D') >= 4 and hand.length_of('C') >= 4: return choices["1D"]
+            if hand.length_of('D') == 3 and hand.length_of('C') == 3: return choices["1C"]
+            return choices["1D"] if hand.length_of('D') > hand.length_of('C') else choices["1C"]
+            
+        return nodes[0]
 
     def _does_hand_fit(self, hand, constraints):
         min_hcp = constraints.get('min_hcp', 0)
         max_hcp = constraints.get('max_hcp', 40)
-        upgrade_alert = None
-
-        # --- QUALITY UPGRADE LOGIC ---
+        
+        # Quality Upgrade
+        alert = None
         if hand.hcp < min_hcp:
-            # Allow 1 point upgrade if quality is high
             if hand.hcp == min_hcp - 1 and hand.quality_hcp >= min_hcp:
-                upgrade_alert = f"Hand upgraded from {hand.hcp} to {min_hcp} due to quality ({hand.quality_hcp:.2f})."
-            else:
-                return False, None
-        elif hand.hcp > max_hcp:
-            return False, None
-        # -----------------------------
+                alert = f"Upgraded {hand.hcp} to {min_hcp} (Quality {hand.quality_hcp:.2f})"
+            else: return False, None
+        elif hand.hcp > max_hcp: return False, None
 
         shape_req = constraints.get('shape_requirements', "")
         
-        if "Balanced" in shape_req and not hand.is_balanced:
-            return False, None
+        # Regex for "X+ Suit" (Minimum Length)
+        # Ignores text starting with "No " or "<" to avoid false positives
+        pos_matches = re.findall(r"(?<!No )(?<!<)(\d+)\+\s*(\w+)", shape_req)
+        for count, suit in pos_matches:
+            if hand.length_of(suit[0].upper()) < int(count): return False, None
 
-        matches = re.findall(r"(\d+)\+\s*(\w+)", shape_req)
-        for count_str, suit_name in matches:
-            min_len = int(count_str)
-            suit_char = suit_name[0].upper()
-            if hand.length_of(suit_char) < min_len:
-                return False, None
+        # Regex for "<X Suit" (Maximum Length)
+        neg_matches = re.findall(r"<(\d+)\s*(\w+)", shape_req)
+        for count, suit in neg_matches:
+            if hand.length_of(suit[0].upper()) >= int(count): return False, None
+            
+        # Legacy/Text Checks
+        if "Balanced" in shape_req and not hand.is_balanced: return False, None
+        if "No 5-card Major" in shape_req and (hand.length_of('H')>=5 or hand.length_of('S')>=5): return False, None
 
-        if "No 5-card Major" in shape_req:
-            if hand.length_of('S') >= 5 or hand.length_of('H') >= 5:
-                return False, None
-        
-        if "<3 Spades" in shape_req and hand.length_of('S') >= 3:
-            return False, None
-
-        return True, upgrade_alert
+        return True, alert
