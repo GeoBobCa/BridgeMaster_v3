@@ -1,0 +1,11 @@
+[project]
+name = "bridgemaster-v3"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=1.56.0",
+    "pyside6>=6.10.1",
+    "ruamel-yaml>=0.18.17",
+]
