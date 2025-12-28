@@ -10,29 +10,41 @@ API_KEY = os.environ.get("GEMINI_API_KEY")
 MODEL_NAME = "gemini-2.0-flash-exp"
 client = genai.Client(api_key=API_KEY)
 
-# --- SYSTEM PROMPT (Currently set for 2nd Negative) ---
+
+## =============================================================
+## ==========     START OF SYSTEM DEFINITION      ====================
+## =============================================================
+
+
 SYSTEM_DEFINITION = """
 ### Audrey Grant Modern Standard
-(Responses to 1 Spade)
+(Responses to 1NT Opening)
 
-Context: Partner opened 1S (shows 5+ Spades, 12-21 HCP).
+Context: Partner opened 1NT (15-17 HCP, Balanced).
 
-1. Support Bids (We have 3+ Spades):
-   - 2S: Simple Raise. 6-9 HCP, 3+ Spades.
-   - 3S: Limit Raise. 10-12 HCP, 3+ Spades. Inviting.
-   - 4S: Preemptive/Weak. 0-9 HCP, 5+ Spades (Law of Total Tricks).
+1. Stayman Convention (2C):
+   - 2C (Var A): 8+ HCP, 4+ Hearts. (Ask for major).
+   - 2C (Var B): 8+ HCP, 4+ Spades. (Ask for major).
+   *Note: We list this twice so either suit triggers the bid.*
 
-2. Game Forcing Support (Conventions):
-   - 2NT (Jacoby 2NT): 13+ HCP, 4+ Spades. Game Forcing. Asks for shortness.
+2. Jacoby Transfers (Announce 5+ card majors):
+   - 2D: Transfer to Hearts. 0+ HCP, 5+ Hearts. (Partner must bid 2H).
+   - 2H: Transfer to Spades. 0+ HCP, 5+ Spades. (Partner must bid 2S).
 
-3. No Trump (No Support):
-   - 1NT: 6-12 HCP (Semi-Forcing). Denies 3 Spades.
+3. Natural / Invitations (No Major Fit):
+   - 2NT: Invitational. 8-9 HCP, Balanced. (Invites 3NT).
+   - 3NT: Game Sign-off. 10-15 HCP, Balanced.
+   - Pass: Weak. 0-7 HCP.
 
-4. New Suits (Natural):
-   - 2C: 10+ HCP, 4+ Clubs. Forcing.
-   - 2D: 10+ HCP, 4+ Diamonds. Forcing.
-   - 2H: 10+ HCP, 5+ Hearts. Forcing. (Note: Requires 5 hearts normally at the 2-level).
+Priority:
+1. Check for 5-card Majors (Transfers) FIRST.
+2. Then check for 4-card Majors (Stayman).
+3. Then bid NT naturally.
 """
+
+## =============================================================
+## ==========     END OF SYSTEM DEFINITION      ====================
+## =============================================================
 
 def generate_auction_logic(auction_key):
     print(f"🧠 Contacting Gemini ({MODEL_NAME})... asking for '{auction_key}' logic...")

@@ -1,6 +1,3 @@
-# ======================================================================
-# ==========         Opening Bids                    ===============
-# ======================================================================
 "Dealer":
   - bid: "Pass"
     type: "Opening"
@@ -12,9 +9,7 @@
     constraints:
       max_hcp: 11
       evaluation_method: "HCP"
-# ======================================================================
-# ==========         Opening Bids  1 NT                   ===============
-# ======================================================================
+
   - bid: "1NT"
     type: "Opening"
     convention: "Natural"
@@ -27,9 +22,7 @@
       max_hcp: 17
       shape_requirements: "Balanced"
       evaluation_method: "HCP"
-# ======================================================================
-# ==========         Opening Bids  2 C                   ===============
-# ======================================================================
+
   - bid: "2C"
     type: "Opening"
     convention: "Strong Artificial"
@@ -235,7 +228,6 @@
       shape_requirements: "4+ Spades, Max 1 Diamond"
       evaluation_method: "Dummy Points"
 
-# === SECTION ===
 "1NT":
   - bid: "Pass"
     type: "Response"
@@ -256,25 +248,15 @@
     convention: "Stayman"
     complexity: "Basic"
     forcing_status: "Forcing"
-    inference: "8+ HCP, 4+ Hearts."
-    explanation: "Stayman: Asking partner if they have a 4-card major (holding Hearts ourselves)."
+    inference: "8+ HCP, At least one 4-card Major."
+    explanation: "Stayman asks opener if they have a 4-card major. You need 8+ HCP (invitational strength) to use this convention."
+    hint_on_miss: "With 8+ points and a 4-card major, bid 2C (Stayman) to find a 4-4 major fit."
     constraints:
       min_hcp: 8
-      shape_requirements: "4+ Hearts"
+      max_hcp: 25
+      shape_requirements: "At least one 4-card Major"
       evaluation_method: "HCP"
 
-  - bid: "2C"
-    type: "Response"
-    convention: "Stayman"
-    complexity: "Basic"
-    forcing_status: "Forcing"
-    inference: "8+ HCP, 4+ Spades."
-    explanation: "Stayman: Asking partner if they have a 4-card major (holding Spades ourselves)."
-    constraints:
-      min_hcp: 8
-      shape_requirements: "4+ Spades"
-      evaluation_method: "HCP"
-      
   - bid: "2D"
     type: "Response"
     convention: "Jacoby Transfer"
@@ -373,7 +355,6 @@
       shape_requirements: "Balanced"
       evaluation_method: "HCP"
 
-# === SECTION ===
 "1S":
   - bid: "Pass"
     type: "Response"
@@ -534,7 +515,6 @@
       shape_requirements: "3+ Spades"
       evaluation_method: "Dummy Points"
 
-# === SECTION ===
 "1C":
   - bid: "1D"
     type: "Response"
@@ -972,9 +952,7 @@
     natural: true
     description: Natural, inviting, promises Club stopper
     hcp_range: 10-12
-# ======================================================================
-# ==========         Opening Bids  1 H                   ===============
-# ======================================================================
+
 "1H":
   - bid: "1S"
     type: "Response"
