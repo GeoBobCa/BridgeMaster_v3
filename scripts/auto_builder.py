@@ -18,28 +18,28 @@ client = genai.Client(api_key=API_KEY)
 
 SYSTEM_DEFINITION = """
 ### Audrey Grant Modern Standard
-(Responses to 1NT Opening)
+(Responses to Minor Suit Openings: 1C / 1D)
 
-Context: Partner opened 1NT (15-17 HCP, Balanced).
+Context: Partner opened 1C or 1D.
 
-1. Stayman Convention (2C):
-   - 2C (Var A): 8+ HCP, 4+ Hearts. (Ask for major).
-   - 2C (Var B): 8+ HCP, 4+ Spades. (Ask for major).
-   *Note: We list this twice so either suit triggers the bid.*
+1. Major Suit Responses (Priority):
+   - 1H: 6+ HCP, 4+ Hearts. (Show major first).
+   - 1S: 6+ HCP, 4+ Spades. (Show major first).
+   - Note: If holding both, bid the cheaper one (Hearts) or longer one.
 
-2. Jacoby Transfers (Announce 5+ card majors):
-   - 2D: Transfer to Hearts. 0+ HCP, 5+ Hearts. (Partner must bid 2H).
-   - 2H: Transfer to Spades. 0+ HCP, 5+ Spades. (Partner must bid 2S).
+2. No Trump (Balanced, No Major):
+   - 1NT: 6-10 HCP, Balanced, No 4-card major.
+   - 2NT: 11-12 HCP, Balanced, No 4-card major.
+   - 3NT: 13-15 HCP, Balanced, No 4-card major.
 
-3. Natural / Invitations (No Major Fit):
-   - 2NT: Invitational. 8-9 HCP, Balanced. (Invites 3NT).
-   - 3NT: Game Sign-off. 10-15 HCP, Balanced.
-   - Pass: Weak. 0-7 HCP.
+3. Raises (Inverted Minors - Optional, but lets stick to simple for now):
+   - 2C (over 1C): 6-10 HCP, 5+ Clubs. Simple Raise.
+   - 3C (over 1C): 11-12 HCP, 5+ Clubs. Limit Raise.
+   - 2D (over 1D): 6-10 HCP, 4+ Diamonds. Simple Raise.
+   - 3D (over 1D): 11-12 HCP, 4+ Diamonds. Limit Raise.
 
-Priority:
-1. Check for 5-card Majors (Transfers) FIRST.
-2. Then check for 4-card Majors (Stayman).
-3. Then bid NT naturally.
+4. New Minor (Forcing):
+   - 1D (over 1C): 6+ HCP, 4+ Diamonds.
 """
 
 ## =============================================================
