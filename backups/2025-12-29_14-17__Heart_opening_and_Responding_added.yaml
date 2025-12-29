@@ -1,0 +1,1084 @@
+# ======================================================================
+# ==========         Opening Bids                    ===============
+# ======================================================================
+"Dealer":
+  - bid: "Pass"
+    type: "Opening"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "0-11 HCP."
+    explanation: "Too weak to open."
+    constraints:
+      max_hcp: 11
+      evaluation_method: "HCP"
+# ======================================================================
+# ==========         Opening Bids  1 NT                   ===============
+# ======================================================================
+  - bid: "1NT"
+    type: "Opening"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "15-17 HCP, Balanced."
+    explanation: "Standard 1NT opening."
+    constraints:
+      min_hcp: 15
+      max_hcp: 17
+      shape_requirements: "Balanced"
+      evaluation_method: "HCP"
+# ======================================================================
+# ==========         Opening Bids  2 C                   ===============
+# ======================================================================
+  - bid: "2C"
+    type: "Opening"
+    convention: "Strong Artificial"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "22+ HCP."
+    explanation: "Strongest opening bid."
+    constraints:
+      min_hcp: 22
+      evaluation_method: "HCP"
+
+  - bid: "1S"
+    type: "Opening"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-21 HCP, 5+ Spades."
+    explanation: "Major suit opening."
+    constraints:
+      min_hcp: 12
+      max_hcp: 21
+      shape_requirements: "5+ Spades"
+      evaluation_method: "HCP"
+
+  - bid: "1H"
+    type: "Opening"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-21 HCP, 5+ Hearts."
+    explanation: "Major suit opening."
+    constraints:
+      min_hcp: 12
+      max_hcp: 21
+      shape_requirements: "5+ Hearts"
+      evaluation_method: "HCP"
+      
+  - bid: "1D"
+    type: "Opening"
+    convention: "Better Minor"
+    constraints:
+      min_hcp: 12
+      max_hcp: 21
+      shape_requirements: "4+ Diamonds"  # <-- 4+ cards, listed FIRST
+      evaluation_method: "HCP"
+
+  - bid: "1C"
+    type: "Opening"
+    convention: "Better Minor"
+    constraints:
+      min_hcp: 12
+      max_hcp: 21
+      shape_requirements: "3+ Clubs"     # <-- 3+ cards, listed SECOND
+      evaluation_method: "HCP"
+
+
+
+"1H - 1S":
+  - bid: "1NT"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-14 HCP, Balanced distribution."
+    explanation: "With a balanced minimum hand (12-14) and no support for Spades, we rebid 1NT."
+    hint_on_miss: "If you are balanced with minimum values and no fit, rebid 1NT."
+    constraints:
+      min_hcp: 12
+      max_hcp: 14
+      shape_requirements: "Balanced, <4 Spades"
+      evaluation_method: "HCP"
+
+  - bid: "2C"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-17 HCP, 4+ Clubs."
+    explanation: "Bidding a new suit at a lower level is natural and non-forcing. It usually shows 4+ cards in the second suit."
+    hint_on_miss: "Show your second suit (Clubs) if you have 4+ cards."
+    constraints:
+      min_hcp: 12
+      max_hcp: 17
+      shape_requirements: "5+ Hearts, 4+ Clubs"
+      evaluation_method: "Length Points"
+
+  - bid: "2D"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-17 HCP, 4+ Diamonds."
+    explanation: "Bidding a new suit at a lower level is natural and non-forcing. It usually shows 4+ cards in the second suit."
+    hint_on_miss: "Show your second suit (Diamonds) if you have 4+ cards."
+    constraints:
+      min_hcp: 12
+      max_hcp: 17
+      shape_requirements: "5+ Hearts, 4+ Diamonds"
+      evaluation_method: "Length Points"
+
+  - bid: "2H"
+    type: "Rebid"
+    convention: "Rebid First Suit"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-15 Total Points, 6+ Hearts."
+    explanation: "With a minimum hand and a long suit (6+), rebid your major to show extra length."
+    hint_on_miss: "Do not rebid a 5-card suit unless you are stuck. 2H promises 6 cards here."
+    constraints:
+      min_hcp: 11
+      max_hcp: 15
+      shape_requirements: "6+ Hearts"
+      evaluation_method: "Length Points"
+
+  - bid: "2S"
+    type: "Rebid"
+    convention: "Simple Raise"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "12-15 Total Points, 4+ Spades."
+    explanation: "We have found a fit! With a minimum hand (12-15), raise partner to the 2-level."
+    hint_on_miss: "Support partner's Spades immediately if you have 4 cards."
+    constraints:
+      min_hcp: 11
+      max_hcp: 15
+      shape_requirements: "4+ Spades"
+      evaluation_method: "Dummy Points"
+
+  - bid: "2NT"
+    type: "Rebid"
+    convention: "Jump Rebid"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "18-19 HCP, Balanced."
+    explanation: "A jump to 2NT shows a balanced hand too strong to open 1NT (18-19 HCP)."
+    hint_on_miss: "With 18-19 balanced points, you must jump to show your strength."
+    constraints:
+      min_hcp: 18
+      max_hcp: 19
+      shape_requirements: "Balanced"
+      evaluation_method: "HCP"
+
+  - bid: "3H"
+    type: "Rebid"
+    convention: "Jump Rebid"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "16-18 Total Points, 6+ Hearts."
+    explanation: "A jump rebid in your own suit shows a medium strength hand (16-18) and a strong 6-card suit."
+    hint_on_miss: "With extra values and a long suit, jump to 3H to invite game."
+    constraints:
+      min_hcp: 15
+      max_hcp: 18
+      shape_requirements: "6+ Hearts"
+      evaluation_method: "Length Points"
+
+  - bid: "3S"
+    type: "Rebid"
+    convention: "Limit Raise"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "16-18 Total Points, 4+ Spades."
+    explanation: "With a medium hand (16-18) and support, jump raise to invite game."
+    hint_on_miss: "You have too much strength for a simple 2S raise. Jump to 3S."
+    constraints:
+      min_hcp: 15
+      max_hcp: 18
+      shape_requirements: "4+ Spades"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4S"
+    type: "Rebid"
+    convention: "Game Raise"
+    complexity: "Basic"
+    forcing_status: "Sign-off"
+    inference: "19-21 Total Points, 4+ Spades."
+    explanation: "With a maximum hand (19-21) and a fit, bid strictly to game."
+    hint_on_miss: "With 19+ points, do not invite. Bid game directly."
+    constraints:
+      min_hcp: 18
+      max_hcp: 21
+      shape_requirements: "4+ Spades"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4C"
+    type: "Rebid"
+    convention: "Splinter"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "19+ Total Points, 4+ Spades, Singleton/Void in Clubs."
+    explanation: "A double jump shift (Splinter) shows excellent support, max values, and shortness in Clubs."
+    hint_on_miss: "If you have a max hand and a singleton, use a Splinter to help partner evaluate slam."
+    constraints:
+      min_hcp: 18
+      max_hcp: 21
+      shape_requirements: "4+ Spades, Max 1 Club"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4D"
+    type: "Rebid"
+    convention: "Splinter"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "19+ Total Points, 4+ Spades, Singleton/Void in Diamonds."
+    explanation: "A double jump shift (Splinter) shows excellent support, max values, and shortness in Diamonds."
+    hint_on_miss: "If you have a max hand and a singleton, use a Splinter to help partner evaluate slam."
+    constraints:
+      min_hcp: 18
+      max_hcp: 21
+      shape_requirements: "4+ Spades, Max 1 Diamond"
+      evaluation_method: "Dummy Points"
+
+# === SECTION ===
+"1NT":
+  - bid: "Pass"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "0-7 HCP, Balanced or Semi-Balanced."
+    explanation: "With fewer than 8 HCP and no 5-card major, we do not have enough strength to invite game. We pass 1NT."
+    hint_on_miss: "You need at least 8 HCP to invite game. If you are weak and balanced, pass."
+    constraints:
+      min_hcp: 0
+      max_hcp: 7
+      shape_requirements: "No 5-card Major"
+      evaluation_method: "HCP"
+
+  - bid: "2C"
+    type: "Response"
+    convention: "Stayman"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 4+ Hearts."
+    explanation: "Stayman: Asking partner if they have a 4-card major (holding Hearts ourselves)."
+    constraints:
+      min_hcp: 8
+      shape_requirements: "4+ Hearts"
+      evaluation_method: "HCP"
+
+  - bid: "2C"
+    type: "Response"
+    convention: "Stayman"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 4+ Spades."
+    explanation: "Stayman: Asking partner if they have a 4-card major (holding Spades ourselves)."
+    constraints:
+      min_hcp: 8
+      shape_requirements: "4+ Spades"
+      evaluation_method: "HCP"
+      
+  - bid: "2D"
+    type: "Response"
+    convention: "Jacoby Transfer"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "0+ HCP, 5+ Hearts."
+    explanation: "A bid of 2D is a transfer to Hearts. It shows 5+ cards in Hearts and commands Opener to bid 2H."
+    hint_on_miss: "With a 5-card Major, use a Transfer (bid the suit below your suit)."
+    constraints:
+      min_hcp: 0
+      max_hcp: 25
+      shape_requirements: "5+ Hearts"
+      evaluation_method: "HCP"
+
+  - bid: "2H"
+    type: "Response"
+    convention: "Jacoby Transfer"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "0+ HCP, 5+ Spades."
+    explanation: "A bid of 2H is a transfer to Spades. It shows 5+ cards in Spades and commands Opener to bid 2S."
+    hint_on_miss: "With a 5-card Major, use a Transfer (bid the suit below your suit)."
+    constraints:
+      min_hcp: 0
+      max_hcp: 25
+      shape_requirements: "5+ Spades"
+      evaluation_method: "HCP"
+
+  - bid: "2S"
+    type: "Response"
+    convention: "Extended Transfer"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "Transfer to 3C (usually to sign off in a minor)."
+    explanation: "A bid of 2S relays to 3C. This is often used to sign off in Clubs or Diamonds with a weak hand."
+    hint_on_miss: "Use 2S to transfer to a minor suit if you have a weak hand with a long minor."
+    constraints:
+      min_hcp: 0
+      max_hcp: 7
+      shape_requirements: "6+ Clubs or Diamonds"
+      evaluation_method: "HCP"
+
+  - bid: "2NT"
+    type: "Response"
+    convention: "Natural Invitation"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "8-9 HCP, Balanced, No 4-card Major."
+    explanation: "This invites partner to Game. It shows 8-9 points and balanced distribution, without a 4-card major."
+    hint_on_miss: "With 8-9 points and no major interest, invite game by bidding 2NT."
+    constraints:
+      min_hcp: 8
+      max_hcp: 9
+      shape_requirements: "Balanced, No 4-card Major"
+      evaluation_method: "HCP"
+
+  - bid: "3NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Sign-off"
+    inference: "10-15 HCP, Balanced, No 4-card Major."
+    explanation: "With 10-15 HCP, we have enough for game (25+ combined). We bid 3NT directly."
+    hint_on_miss: "With 10+ points and no major suit interest, jump directly to Game (3NT)."
+    constraints:
+      min_hcp: 10
+      max_hcp: 15
+      shape_requirements: "Balanced, No 4-card Major"
+      evaluation_method: "HCP"
+
+  - bid: "4C"
+    type: "Response"
+    convention: "Gerber"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "Ace Asking (after NT opening)."
+    explanation: "A jump to 4C directly over 1NT or 2NT is Gerber, asking for Aces."
+    hint_on_miss: "If you want to ask for Aces over a NT opening, use Gerber (4C), not Blackwood."
+    constraints:
+      min_hcp: 16
+      max_hcp: 25
+      shape_requirements: "Slam Interest"
+      evaluation_method: "HCP"
+
+  - bid: "4NT"
+    type: "Response"
+    convention: "Quantitative"
+    complexity: "Advanced"
+    forcing_status: "Non-Forcing"
+    inference: "Invites 6NT (shows ~16-17 HCP)."
+    explanation: "A direct raise to 4NT is not Blackwood. It is a Quantitative invitation asking partner to bid 6NT with a maximum."
+    hint_on_miss: "4NT is quantitative here. Bid it with 16-17 points to invite slam."
+    constraints:
+      min_hcp: 16
+      max_hcp: 17
+      shape_requirements: "Balanced"
+      evaluation_method: "HCP"
+
+# === SECTION ===
+"1S":
+  - bid: "Pass"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "0-5 HCP."
+    explanation: "With fewer than 6 points, we cannot keep the bidding open."
+    hint_on_miss: "You need at least 6 points to respond."
+    constraints:
+      min_hcp: 0
+      max_hcp: 5
+      shape_requirements: "Any"
+      evaluation_method: "HCP"
+
+  - bid: "1NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "6-9 HCP, denies 3+ Spades."
+    explanation: "The 'dustbin' bid. Shows 6-9 points and denies support for Spades. It implies you don't have a new suit you can bid at the 1-level."
+    hint_on_miss: "Without support for Spades and unable to bid a new suit at the 1-level, bid 1NT (6-9)."
+    constraints:
+      min_hcp: 6
+      max_hcp: 9
+      shape_requirements: "<3 Spades"
+      evaluation_method: "HCP"
+
+  - bid: "2C"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "10+ HCP, 5+ Clubs."
+    explanation: "A new suit at the 2-level promises 10+ points and usually a 5-card suit."
+    hint_on_miss: "You need 10+ points to bid a new suit at the 2-level."
+    constraints:
+      min_hcp: 10
+      max_hcp: 21
+      shape_requirements: "5+ Clubs"
+      evaluation_method: "HCP"
+
+  - bid: "2D"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "10+ HCP, 5+ Diamonds."
+    explanation: "A new suit at the 2-level promises 10+ points and usually a 5-card suit."
+    hint_on_miss: "You need 10+ points to bid a new suit at the 2-level."
+    constraints:
+      min_hcp: 10
+      max_hcp: 21
+      shape_requirements: "5+ Diamonds"
+      evaluation_method: "HCP"
+
+  - bid: "2H"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "10+ HCP, 5+ Hearts."
+    explanation: "A new suit at the 2-level promises 10+ points and usually a 5-card suit. This is NOT a raise; it is a new suit."
+    hint_on_miss: "2H is a new suit here (Hearts), not a raise of Spades. You need 10+ points."
+    constraints:
+      min_hcp: 10
+      max_hcp: 21
+      shape_requirements: "5+ Hearts"
+      evaluation_method: "HCP"
+
+  - bid: "2S"
+    type: "Response"
+    convention: "Simple Raise"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "6-9 HCP, 3+ Spades."
+    explanation: "A minimum raise showing a fit."
+    constraints:
+      min_hcp: 6
+      max_hcp: 9
+      shape_requirements: "3+ Spades"
+      evaluation_method: "HCP"
+
+  - bid: "2NT"
+    type: "Response"
+    convention: "Jacoby 2NT"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "13+ Dummy Points, 4+ Spades."
+    explanation: "Artificial game-forcing raise asking Opener to show shortness."
+    hint_on_miss: "With game values and 4+ trumps, use Jacoby 2NT."
+    constraints:
+      min_dummy_points: 13
+      shape_requirements: "4+ Spades"
+      evaluation_method: "Dummy Points"
+
+  - bid: "3S"
+    type: "Response"
+    convention: "Limit Raise"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "11-12 Dummy Points, 3+ Spades."
+    explanation: "Invitational jump raise. Asks partner to bid game with a maximum."
+    hint_on_miss: "With 11-12 points and support, jump to 3S to invite game."
+    constraints:
+      min_dummy_points: 11
+      max_dummy_points: 12
+      shape_requirements: "3+ Spades"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4C"
+    type: "Response"
+    convention: "Splinter"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "13+ Points, 4+ Spades, Singleton/Void in Clubs."
+    explanation: "Double jump shift showing game values, support, and shortness in Clubs."
+    constraints:
+      min_dummy_points: 13
+      shape_requirements: "4+ Spades, Max 1 Club"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4D"
+    type: "Response"
+    convention: "Splinter"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "13+ Points, 4+ Spades, Singleton/Void in Diamonds."
+    explanation: "Double jump shift showing game values, support, and shortness in Diamonds."
+    constraints:
+      min_dummy_points: 13
+      shape_requirements: "4+ Spades, Max 1 Diamond"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4H"
+    type: "Response"
+    convention: "Splinter"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "13+ Points, 4+ Spades, Singleton/Void in Hearts."
+    explanation: "Double jump shift showing game values, support, and shortness in Hearts."
+    constraints:
+      min_dummy_points: 13
+      shape_requirements: "4+ Spades, Max 1 Heart"
+      evaluation_method: "Dummy Points"
+
+  - bid: "4S"
+    type: "Response"
+    convention: "Game Raise"
+    complexity: "Basic"
+    forcing_status: "Sign-off"
+    inference: "13+ Dummy Points, usually balanced."
+    explanation: "A direct jump to game. Usually denies slam interest."
+    hint_on_miss: "If you have game values and no slam interest, bid 4S."
+    constraints:
+      min_dummy_points: 13
+      shape_requirements: "3+ Spades"
+      evaluation_method: "Dummy Points"
+
+# === SECTION ===
+"1C":
+  - bid: "1D"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "1H"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "1S"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "1NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "No Major, Balanced or semi-balanced hand."
+    constraints:
+      min_hcp: 6
+      max_hcp: 9
+      evaluation_method: "HCP"
+  - bid: "2C"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "5+ clubs"
+    constraints:
+      min_cards_in_suit: 5
+      min_hcp: 6
+      max_hcp: 10
+      evaluation_method: "HCP"
+  - bid: "2D"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards in Diamonds"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "2H"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards in Hearts"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "2S"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "4+ cards in Spades"
+    constraints:
+      min_cards_in_suit: 4
+  - bid: "2NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "No Major, Balanced or semi-balanced hand."
+    constraints:
+      min_hcp: 11
+      max_hcp: 12
+      evaluation_method: "HCP"
+  - bid: "3C"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "5+ clubs"
+    constraints:
+      min_cards_in_suit: 5
+      min_hcp: 11
+      max_hcp: 15
+      evaluation_method: "HCP"
+  - bid: "3NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "Point/shape"
+    explanation: "No Major, Balanced or semi-balanced hand."
+    constraints:
+      min_hcp: 13
+      max_hcp: 15
+      evaluation_method: "HCP"
+
+"1NT - 2C":
+  - bid: "2D"
+    type: "Rebid"
+    convention: "Stayman Response"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "No 4-card Major suit"
+    explanation: "Showing no 4-card major suit"
+    constraints:
+      min_hcp: 15
+      max_hcp: 17
+      shape_requirements: "Balanced or Semi-Balanced, No 4-card Major"
+      evaluation_method: "HCP"
+  - bid: "2H"
+    type: "Rebid"
+    convention: "Stayman Response"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "4+ Hearts"
+    explanation: "Showing 4 or more Hearts"
+    constraints:
+      min_hcp: 15
+      max_hcp: 17
+      shape_requirements: "4+ Hearts, Balanced or Semi-Balanced"
+      evaluation_method: "HCP"
+  - bid: "2S"
+    type: "Rebid"
+    convention: "Stayman Response"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "4+ Spades, denies 4 Hearts"
+    explanation: "Showing 4 or more Spades, denying 4 Hearts"
+    constraints:
+      min_hcp: 15
+      max_hcp: 17
+      shape_requirements: "4+ Spades, denies 4 Hearts, Balanced or Semi-Balanced"
+      evaluation_method: "HCP"
+
+
+"2C":
+  - bid: "2D"
+    type: "Response"
+    convention: "Waiting"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "0-7 HCP or Waiting bid."
+    explanation: "Artificial negative or waiting bid."
+    constraints:
+      max_hcp: 7
+      evaluation_method: "HCP"
+  - bid: "2H"
+    type: "Response"
+    convention: "Positive"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 5+ Hearts."
+    explanation: "8+ HCP with 5+ Hearts. Game forcing."
+    constraints:
+      min_hcp: 8
+      min_length: 5
+      suit: "H"
+      evaluation_method: "HCP"
+  - bid: "2S"
+    type: "Response"
+    convention: "Positive"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 5+ Spades."
+    explanation: "8+ HCP with 5+ Spades. Game forcing."
+    constraints:
+      min_hcp: 8
+      min_length: 5
+      suit: "S"
+      evaluation_method: "HCP"
+  - bid: "2NT"
+    type: "Response"
+    convention: "Positive Balanced"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, Balanced."
+    explanation: "8+ HCP with a balanced hand. Game forcing."
+    constraints:
+      min_hcp: 8
+      hand_type: "Balanced"
+      evaluation_method: "HCP"
+  - bid: "3C"
+    type: "Response"
+    convention: "Positive"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 5+ Clubs."
+    explanation: "8+ HCP with 5+ Clubs. Game forcing."
+    constraints:
+      min_hcp: 8
+      min_length: 5
+      suit: "C"
+      evaluation_method: "HCP"
+  - bid: "3D"
+    type: "Response"
+    convention: "Positive"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "8+ HCP, 5+ Diamonds."
+    explanation: "8+ HCP with 5+ Diamonds. Game forcing."
+    constraints:
+      min_hcp: 8
+      min_length: 5
+      suit: "D"
+      evaluation_method: "HCP"
+
+
+"2C - 2D":
+  - bid: "2NT"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "22-24 HCP, Balanced."
+    explanation: "Shows a balanced hand with 22-24 HCP. Systems (Stayman/Transfers) are on."
+    constraints:
+      min_hcp: 22
+      max_hcp: 24
+      shape_requirements: "Balanced"
+      evaluation_method: "HCP"
+  - bid: "3NT"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "25-27 HCP, Balanced."
+    explanation: "Shows a balanced hand with 25-27 HCP."
+    constraints:
+      min_hcp: 25
+      max_hcp: 27
+      shape_requirements: "Balanced"
+      evaluation_method: "HCP"
+  - bid: "2H"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Game Forcing"
+    inference: "5+ card Heart suit."
+    explanation: "Shows a natural 5+ card Heart suit."
+    constraints:
+      min_length: 5
+      suit: "H"
+  - bid: "2S"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Game Forcing"
+    inference: "5+ card Spade suit."
+    explanation: "Shows a natural 5+ card Spade suit."
+    constraints:
+      min_length: 5
+      suit: "S"
+  - bid: "3C"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Game Forcing"
+    inference: "5+ card Club suit."
+    explanation: "Shows a natural 5+ card Club suit."
+    constraints:
+      min_length: 5
+      suit: "C"
+  - bid: "3D"
+    type: "Rebid"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Game Forcing"
+    inference: "5+ card Diamond suit."
+    explanation: "Shows a natural 5+ card Diamond suit."
+    constraints:
+      min_length: 5
+      suit: "D"
+
+
+"2C - 2D - 2H":
+  - bid: "2S"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Beginner"
+    forcing_status: "Game Forcing"
+    inference: "5+ Spades, 4+ HCP."
+    explanation: "Natural response showing 5+ Spades and a positive hand."
+    constraints:
+      min_length: 5
+      suit: "S"
+      min_hcp: 4
+      evaluation_method: "HCP"
+  - bid: "2NT"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Beginner"
+    forcing_status: "Game Forcing"
+    inference: "Balanced, 4+ HCP, Denies 3+ Hearts."
+    explanation: "Natural response showing a balanced hand, denying 3+ Hearts, and a positive hand."
+    constraints:
+      min_hcp: 4
+      hand_pattern: "Balanced"
+      max_hearts: 2
+      evaluation_method: "HCP"
+  - bid: "3C"
+    type: "Response"
+    convention: "Second Negative"
+    complexity: "Advanced"
+    forcing_status: "Non-Forcing"
+    inference: "0-3 HCP, Negative."
+    explanation: "The Cheaper Minor (3C) is an artificial Second Negative showing a bust hand."
+    constraints:
+      min_hcp: 0
+      max_hcp: 3
+      evaluation_method: "HCP"
+  - bid: "3D"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Beginner"
+    forcing_status: "Game Forcing"
+    inference: "5+ Diamonds, 4+ HCP."
+    explanation: "Natural response showing 5+ Diamonds and a positive hand."
+    constraints:
+      min_length: 5
+      suit: "D"
+      min_hcp: 4
+      evaluation_method: "HCP"
+  - bid: "3H"
+    type: "Response"
+    convention: "Positive Raise"
+    complexity: "Beginner"
+    forcing_status: "Game Forcing"
+    inference: "3+ Hearts, 4+ HCP."
+    explanation: "Positive Raise showing 3+ Hearts and a positive hand."
+    constraints:
+      min_length: 3
+      suit: "H"
+      min_hcp: 4
+      evaluation_method: "HCP"
+
+"1D":
+  "1H":
+    description: "4+ Hearts, 6+ HCP. (Bidding up the line: 4 hearts before 4 spades)."
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 6+
+    shape:
+      hearts: 4+
+  "1S":
+    description: 4+ Spades, 6+ HCP.
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 6+
+    shape:
+      spades: 4+
+  "1NT":
+    description: 6-10 HCP, no 4-card Major.
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 6-10
+    shape:
+      hearts: "<4"
+      spades: "<4"
+  "2C":
+    description: 10+ HCP, 4+ Clubs. (Natural, Forcing for one round).
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 10+
+    shape:
+      clubs: 4+
+    forcing: One Round
+  "2D":
+    description: 6-9 HCP, 4+ Diamonds (Simple Raise).
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 6-9
+    shape:
+      diamonds: 4+
+    bid_type: Simple Raise
+  "3D":
+    description: 10-12 HCP, 4+ Diamonds (Limit Raise).
+    conventions:
+      - Audrey Grant Modern Standard
+    hcp: 10-12
+    shape:
+      diamonds: 4+
+    bid_type: Limit Raise
+
+
+"1D - 1H":
+  "1S":
+    description: 4 Spades.
+  "1NT":
+    description: Balanced, 12-14 HCP.
+  "2C":
+    description: 4+ Clubs, lower range.
+  "2H":
+    description: 4-card support, 12-14 points (Minimum).
+  "3H":
+    description: 4-card support, 15-17 points (Inviting).
+  "4H":
+    description: 4-card support, 18-19 points (Game).
+
+
+"1D - 1H - 1S":
+  2C:
+    convention: Fourth Suit Forcing
+    artificial: true
+    forcing: Game
+    description: "Partner, I have a game-forcing hand but no clear direction. Please describe your hand further (do you have a stopper in Clubs for NT?)."
+    minimum_hcp: 12
+  2D:
+    natural: true
+    description: Preference to Opener's first suit
+    strength: Weak
+    hcp_range: 6-9
+  2H:
+    natural: true
+    description: Re-bidding own suit
+    cards: "6+"
+    strength: Weak/Inviting
+  2NT:
+    natural: true
+    description: Natural, inviting, promises Club stopper
+    hcp_range: 10-12
+# ======================================================================
+# ==========         Opening Bids  1 H                   ===============
+# ======================================================================
+"1H":
+  - bid: "1S"
+    type: "Response"
+    convention: "Natural"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "6+ HCP, 4+ Spades"
+    explanation: "Natural response, forcing for one round."
+    constraints:
+      min_hcp: 6
+      shape_requirements: "4+ Spades"
+      evaluation_method: "HCP"
+
+  - bid: "1NT"
+    type: "Response"
+    convention: "Semi-Forcing NT"
+    complexity: "Intermediate"
+    forcing_status: "Semi-Forcing"
+    inference: "6-12 HCP, No 4-card Spade suit, No 3-card Heart support"
+    explanation: "Standard response denying support and denying spades."
+    constraints:
+      min_hcp: 6
+      max_hcp: 12
+      shape_requirements: "<3 Hearts, <4 Spades"
+      evaluation_method: "HCP"
+
+  - bid: "2C"
+    type: "Response"
+    convention: "Two Over One"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "10+ HCP, 4+ Clubs"
+    explanation: "Standard response in new suit."
+    constraints:
+      min_hcp: 10
+      shape_requirements: "4+ Clubs"
+      evaluation_method: "HCP"
+
+  - bid: "2D"
+    type: "Response"
+    convention: "Two Over One"
+    complexity: "Basic"
+    forcing_status: "Forcing"
+    inference: "10+ HCP, 4+ Diamonds"
+    explanation: "Standard response in new suit."
+    constraints:
+      min_hcp: 10
+      shape_requirements: "4+ Diamonds"
+      evaluation_method: "HCP"
+
+  - bid: "2H"
+    type: "Response"
+    convention: "Simple Raise"
+    complexity: "Basic"
+    forcing_status: "Non-Forcing"
+    inference: "6-9 HCP, 3+ Hearts"
+    explanation: "Minimum raise. Found a fit."
+    constraints:
+      min_hcp: 6
+      max_hcp: 9
+      shape_requirements: "3+ Hearts"
+      evaluation_method: "HCP"
+
+  - bid: "2NT"
+    type: "Response"
+    convention: "Jacoby 2NT"
+    complexity: "Advanced"
+    forcing_status: "Game Forcing"
+    inference: "13+ Dummy Points, 4+ Hearts"
+    explanation: "Game forcing raise asking for shortness."
+    constraints:
+      min_hcp: 13
+      shape_requirements: "4+ Hearts"
+      evaluation_method: "Dummy Points"
+
+  - bid: "3H"
+    type: "Response"
+    convention: "Limit Raise"
+    complexity: "Intermediate"
+    forcing_status: "Inviting"
+    inference: "10-12 HCP, 3+ Hearts"
+    explanation: "Invites game if Opener is not minimum."
+    constraints:
+      min_hcp: 10
+      max_hcp: 12
+      shape_requirements: "3+ Hearts"
+      evaluation_method: "HCP"
+
+  - bid: "4H"
+    type: "Response"
+    convention: "Preemptive Raise"
+    complexity: "Intermediate"
+    forcing_status: "Non-Forcing"
+    inference: "0-9 HCP, 5+ Hearts"
+    explanation: "Weak hand with lots of trumps. To play."
+    constraints:
+      min_hcp: 0
+      max_hcp: 9
+      shape_requirements: "5+ Hearts"
+      evaluation_method: "Law of Total Tricks"
