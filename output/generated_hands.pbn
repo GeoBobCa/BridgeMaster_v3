@@ -1,0 +1,24 @@
+[Event "Generated Hand 1"]
+[Site "BridgeMaster"]
+[Deal "N:J2.AKQ87.KQ843.6 Q94.9543.J5.8753 AKT83.JT6.T2.AQ2 765.2.A976.KJT94"]
+[Dealer "N"]
+[Note "1S: Standard Opening. | 2H: 2/1 Game Force (5+ Hearts). | 2S: Waiting / Minimum. | 4S: Fast Arrival to Game."]
+[Auction "N"]
+Pass Pass 1S Pass 2H Pass 2S Pass 4S Pass Pass Pass
+
+[Event "Generated Hand 2"]
+[Site "BridgeMaster"]
+[Deal "N:3.KQJ952.A542.K8 8642.T8.QT87.764 AKJ75.A7.96.T532 QT9.643.KJ3.AQJ9"]
+[Dealer "N"]
+[Note "1S: Standard Opening. | 2H: 2/1 Game Force (5+ Hearts). | 2S: Waiting / Minimum. | 4H: Rebidding long Hearts (Game Force)."]
+[Auction "N"]
+Pass Pass 1S Pass 2H Pass 2S Pass 4H Pass Pass Pass
+
+[Event "Generated Hand 3"]
+[Site "BridgeMaster"]
+[Deal "N:A6542.5.KQ98.A76 Q987.KJ72.432.T4 KT.AQ864.AJ5.KJ5 J3.T93.T76.Q9832"]
+[Dealer "N"]
+[Note "1S: Standard Opening. | 2H: 2/1 Game Force (5+ Hearts). | 2S: Waiting / Minimum. | 3NT: Offer to play 3NT."]
+[Auction "N"]
+1S Pass 2H Pass 2S Pass 3NT Pass Pass Pass
+

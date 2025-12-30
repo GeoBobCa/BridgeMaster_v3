@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BridgeMaster Lessons</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .hand-record { 
+            background: white; 
+            border-left: 6px solid #00563f;
+            margin-bottom: 40px; 
+            padding: 25px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .header { border-bottom: 1px solid #eee; margin-bottom: 20px; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .header h2 { margin: 0; color: #1a1a1a; font-size: 1.4em; }
+        .header span { background: #eef; color: #446; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+
+        /* Grid Layout */
+        .board-layout { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: 20px; }
+        
+        .hands-area { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .north { grid-column: 2; text-align: center; }
+        .west { grid-column: 1; grid-row: 2; }
+        .center-img { grid-column: 2; grid-row: 2; display: flex; justify-content: center; align-items: center; background: #e8f5e9; border-radius: 4px; color: #00563f; font-weight: bold; border: 1px solid #cce5d0; }
+        .east { grid-column: 3; grid-row: 2; text-align: right; }
+        .south { grid-column: 2; grid-row: 3; text-align: center; }
+
+        .auction-area { grid-column: 3; background: #fafafa; padding: 15px; border-radius: 6px; border: 1px solid #eee; }
+        
+        .hand-box { padding: 8px; font-size: 0.95em; }
+        .hand-box strong { display: block; margin-bottom: 4px; color: #555; text-transform: uppercase; font-size: 0.75em; letter-spacing: 1px; }
+        .holding { font-family: 'Consolas', monospace; font-size: 1.1em; }
+
+        .suit-S, .suit-C { color: #222; }
+        .suit-H, .suit-D { color: #d32f2f; }
+        .symbol { width: 18px; display: inline-block; text-align: center; }
+
+        table.auction { width: 100%; border-collapse: collapse; font-size: 0.95em; margin-bottom: 15px; }
+        table.auction th { border-bottom: 2px solid #ddd; padding: 6px; color: #444; }
+        table.auction td { padding: 6px; text-align: center; border-bottom: 1px solid #f0f0f0; }
+
+        /* Logic Explanations */
+        .logic-section { grid-column: 1 / -1; margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; }
+        .logic-section h3 { margin: 0 0 10px 0; font-size: 1em; color: #00563f; }
+        .logic-list { list-style: none; padding: 0; margin: 0; }
+        .logic-list li { margin-bottom: 8px; padding-left: 20px; position: relative; color: #444; }
+        .logic-list li::before { content: "•"; color: #00563f; font-weight: bold; position: absolute; left: 0; }
+        .logic-bid { font-weight: bold; color: #000; background: #e8f5e9; padding: 2px 6px; border-radius: 4px; margin-right: 8px; border: 1px solid #c8e6c9; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center; color:#00563f; margin-bottom: 40px;">BridgeMaster: Logic Analysis</h1>
+
+    <div class="hand-record">
+        <div class="header">
+            <h2>Hand #1</h2>
+            <span>Generated Hand 1</span>
+        </div>
+        
+        <div class="board-layout">
+            <div class="hands-area">
+                <div class="north"><div class="hand-box"><strong>North</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>JT962</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>K3</div><div class='holding suit-D'><span class='symbol'>&diams;</span>A642</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>A6</div></div></div>
+                <div class="west"><div class="hand-box"><strong>West</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>3</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>T952</div><div class='holding suit-D'><span class='symbol'>&diams;</span>Q7</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>KQJT95</div></div></div>
+                <div class="center-img">N / All</div>
+                <div class="east"><div class="hand-box"><strong>East</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>AQ8754</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>76</div><div class='holding suit-D'><span class='symbol'>&diams;</span>T853</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>4</div></div></div>
+                <div class="south"><div class="hand-box"><strong>South</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>K</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>AQJ84</div><div class='holding suit-D'><span class='symbol'>&diams;</span>KJ9</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>8732</div></div></div>
+            </div>
+
+            <div class="auction-area">
+                <table class="auction">
+                    <thead><tr><th>North</th><th>East</th><th>South</th><th>West</th></tr></thead>
+                    <tbody><tr><td>1S</td><td>Pass</td><td>2H</td><td>Pass</td></tr><tr><td>Pass</td><td>Pass</td></tr></tbody>
+                </table>
+            </div>
+            
+            <div class="logic-section"><h3>Why did they bid that?</h3><ul class="logic-list"><li><span class="logic-bid">1S</span> Standard 1S Opening.</li><li><span class="logic-bid">2H</span> New Suit (Forcing).</li></ul></div>
+        </div>
+    </div>
+    
+    <div class="hand-record">
+        <div class="header">
+            <h2>Hand #2</h2>
+            <span>Generated Hand 2</span>
+        </div>
+        
+        <div class="board-layout">
+            <div class="hands-area">
+                <div class="north"><div class="hand-box"><strong>North</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>AQJT972</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>764</div><div class='holding suit-D'><span class='symbol'>&diams;</span>K3</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>K</div></div></div>
+                <div class="west"><div class="hand-box"><strong>West</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>65</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>A93</div><div class='holding suit-D'><span class='symbol'>&diams;</span>J762</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>AT92</div></div></div>
+                <div class="center-img">N / All</div>
+                <div class="east"><div class="hand-box"><strong>East</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>43</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>T8</div><div class='holding suit-D'><span class='symbol'>&diams;</span>QT98</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>J8765</div></div></div>
+                <div class="south"><div class="hand-box"><strong>South</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>K8</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>KQJ52</div><div class='holding suit-D'><span class='symbol'>&diams;</span>A54</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>Q43</div></div></div>
+            </div>
+
+            <div class="auction-area">
+                <table class="auction">
+                    <thead><tr><th>North</th><th>East</th><th>South</th><th>West</th></tr></thead>
+                    <tbody><tr><td>1S</td><td>Pass</td><td>2H</td><td>Pass</td></tr><tr><td>Pass</td><td>Pass</td></tr></tbody>
+                </table>
+            </div>
+            
+            <div class="logic-section"><h3>Why did they bid that?</h3><ul class="logic-list"><li><span class="logic-bid">1S</span> Standard 1S Opening.</li><li><span class="logic-bid">2H</span> New Suit (Forcing).</li></ul></div>
+        </div>
+    </div>
+    
+    <div class="hand-record">
+        <div class="header">
+            <h2>Hand #3</h2>
+            <span>Generated Hand 3</span>
+        </div>
+        
+        <div class="board-layout">
+            <div class="hands-area">
+                <div class="north"><div class="hand-box"><strong>North</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>AKJ85</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>95</div><div class='holding suit-D'><span class='symbol'>&diams;</span>A2</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>QJ93</div></div></div>
+                <div class="west"><div class="hand-box"><strong>West</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>Q9742</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>86</div><div class='holding suit-D'><span class='symbol'>&diams;</span>KJ43</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>K6</div></div></div>
+                <div class="center-img">N / All</div>
+                <div class="east"><div class="hand-box"><strong>East</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>3</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>QJ4</div><div class='holding suit-D'><span class='symbol'>&diams;</span>T8765</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>T842</div></div></div>
+                <div class="south"><div class="hand-box"><strong>South</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>T6</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>AKT732</div><div class='holding suit-D'><span class='symbol'>&diams;</span>Q9</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>A75</div></div></div>
+            </div>
+
+            <div class="auction-area">
+                <table class="auction">
+                    <thead><tr><th>North</th><th>East</th><th>South</th><th>West</th></tr></thead>
+                    <tbody><tr><td>1S</td><td>Pass</td><td>2H</td><td>Pass</td></tr><tr><td>Pass</td><td>Pass</td></tr></tbody>
+                </table>
+            </div>
+            
+            <div class="logic-section"><h3>Why did they bid that?</h3><ul class="logic-list"><li><span class="logic-bid">1S</span> Standard 1S Opening.</li><li><span class="logic-bid">2H</span> New Suit (Forcing).</li></ul></div>
+        </div>
+    </div>
+    
+    <div class="hand-record">
+        <div class="header">
+            <h2>Hand #4</h2>
+            <span>Generated Hand 4</span>
+        </div>
+        
+        <div class="board-layout">
+            <div class="hands-area">
+                <div class="north"><div class="hand-box"><strong>North</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>KQT854</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>8</div><div class='holding suit-D'><span class='symbol'>&diams;</span>J84</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>AK4</div></div></div>
+                <div class="west"><div class="hand-box"><strong>West</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>92</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>KT2</div><div class='holding suit-D'><span class='symbol'>&diams;</span>K7532</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>QT2</div></div></div>
+                <div class="center-img">N / All</div>
+                <div class="east"><div class="hand-box"><strong>East</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>J3</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>J976</div><div class='holding suit-D'><span class='symbol'>&diams;</span>QT6</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>7653</div></div></div>
+                <div class="south"><div class="hand-box"><strong>South</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>A76</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>AQ543</div><div class='holding suit-D'><span class='symbol'>&diams;</span>A9</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>J98</div></div></div>
+            </div>
+
+            <div class="auction-area">
+                <table class="auction">
+                    <thead><tr><th>North</th><th>East</th><th>South</th><th>West</th></tr></thead>
+                    <tbody><tr><td>1S</td><td>Pass</td><td>2H</td><td>Pass</td></tr><tr><td>Pass</td><td>Pass</td></tr></tbody>
+                </table>
+            </div>
+            
+            <div class="logic-section"><h3>Why did they bid that?</h3><ul class="logic-list"><li><span class="logic-bid">1S</span> Standard 1S Opening.</li><li><span class="logic-bid">2H</span> New Suit (Forcing).</li></ul></div>
+        </div>
+    </div>
+    
+    <div class="hand-record">
+        <div class="header">
+            <h2>Hand #5</h2>
+            <span>Generated Hand 5</span>
+        </div>
+        
+        <div class="board-layout">
+            <div class="hands-area">
+                <div class="north"><div class="hand-box"><strong>North</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>AKJ43</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>QT2</div><div class='holding suit-D'><span class='symbol'>&diams;</span>3</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>K963</div></div></div>
+                <div class="west"><div class="hand-box"><strong>West</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>987</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>K4</div><div class='holding suit-D'><span class='symbol'>&diams;</span>QJ865</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>T72</div></div></div>
+                <div class="center-img">N / All</div>
+                <div class="east"><div class="hand-box"><strong>East</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>QT65</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>765</div><div class='holding suit-D'><span class='symbol'>&diams;</span>T9742</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>5</div></div></div>
+                <div class="south"><div class="hand-box"><strong>South</strong><div class='holding suit-S'><span class='symbol'>&spades;</span>2</div><div class='holding suit-H'><span class='symbol'>&hearts;</span>AJ983</div><div class='holding suit-D'><span class='symbol'>&diams;</span>AK</div><div class='holding suit-C'><span class='symbol'>&clubs;</span>AQJ84</div></div></div>
+            </div>
+
+            <div class="auction-area">
+                <table class="auction">
+                    <thead><tr><th>North</th><th>East</th><th>South</th><th>West</th></tr></thead>
+                    <tbody><tr><td>1S</td><td>Pass</td><td>2H</td><td>Pass</td></tr><tr><td>Pass</td><td>Pass</td></tr></tbody>
+                </table>
+            </div>
+            
+            <div class="logic-section"><h3>Why did they bid that?</h3><ul class="logic-list"><li><span class="logic-bid">1S</span> Standard 1S Opening.</li><li><span class="logic-bid">2H</span> New Suit (Forcing).</li></ul></div>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

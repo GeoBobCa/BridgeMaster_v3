@@ -1,40 +1,36 @@
 import sys
-import os
 from ruamel.yaml import YAML
+from pathlib import Path
 
-# ==============================================================================
-# 1. SETUP & LOAD (Using ruamel.yaml)
-# ==============================================================================
-# Adjust the path if your yaml file is in a different folder relative to this script
-# Assuming script is in /tests/ and yaml is in /systems/
-FILENAME = "systems/bidding_tree.yaml" 
-# If the file is in the same folder as the script, use: FILENAME = "bidding_tree.yaml"
+# --- ROBUST PATH SETUP ---
+# 1. Identify where this script is: .../BridgeMaster_v3/tests/
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+# 2. Find the project root: .../BridgeMaster_v3/
+PROJECT_ROOT = SCRIPT_DIR.parent
+
+# 3. Construct path to the YAML file: .../BridgeMaster_v3/systems/bidding_tree.yaml
+FILENAME = PROJECT_ROOT / "systems" / "bidding_tree.yaml"
+# -------------------------
 
 # Initialize the ruamel object
-yaml = YAML()
-yaml.typ = 'safe' 
+yaml = YAML(typ='safe')
 
-if not os.path.exists(FILENAME):
-    # Fallback check: look in current directory if relative path fails
-    if os.path.exists("bidding_tree.yaml"):
-        FILENAME = "bidding_tree.yaml"
-    else:
-        print(f"❌ Error: Could not find '{FILENAME}'")
-        sys.exit(1)
+if not FILENAME.exists():
+    print(f"❌ Error: Could not find '{FILENAME}'")
+    sys.exit(1)
 
 try:
-    with open(FILENAME, "r") as f:
+    with FILENAME.open("r", encoding="utf-8") as f:
         data = yaml.load(f)
         
-        # FIX: Handle both 'List' and 'Dictionary with Dealer key' structures
         if isinstance(data, dict) and 'Dealer' in data:
             BIDDING_RULES = data['Dealer']
-            print(f"✅ Successfully loaded 'Dealer' rules from '{FILENAME}'")
+            print(f"✅ Successfully loaded rules from '{FILENAME}'")
         elif isinstance(data, list):
             BIDDING_RULES = data
-            print(f"✅ Successfully loaded List rules from '{FILENAME}'")
         else:
-            print("❌ Error: YAML structure unrecognized. Expected a List or a 'Dealer' key.")
+            print("❌ Error: YAML structure unrecognized.")
             sys.exit(1)
 
 except Exception as e:

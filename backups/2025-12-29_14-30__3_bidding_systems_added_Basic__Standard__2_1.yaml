@@ -12,6 +12,14 @@
 # ======================================================================
 
 Dealer:
+  # === 1. PASS ===
+  - bid: "Pass"
+    type: "Opening"
+    systems: ["All"]
+    convention: "Natural"
+    constraints:
+      max_hcp: 11
+      explanation: "Too weak to open (0-11 HCP)."
 
   # === 2. STRONG 2C ===
   - bid: "2C"
@@ -236,61 +244,6 @@ Dealer:
           min_dummy_points: 13
           shape_requirements: "4+ Spades"
           explanation: "Jacoby 2NT: 13+ points, 4+ card support."
-        
-        # KEY FIX: This line must line up with 'constraints' and 'type' above it
-        Opener_Rebid:
-          # 1. SHOW SHORTNESS (Priority)
-          - bid: "3C"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Show Shortness"
-            constraints:
-              shape_requirements: "Max 1 Club" 
-              explanation: "Showing singleton/void in Clubs."
-
-          - bid: "3D"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Show Shortness"
-            constraints:
-              shape_requirements: "Max 1 Diamond"
-              explanation: "Showing singleton/void in Diamonds."
-
-          - bid: "3H"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Show Shortness"
-            constraints:
-              shape_requirements: "Max 1 Heart"
-              explanation: "Showing singleton/void in Hearts."
-
-          # 2. SHOW STRENGTH (Balanced)
-          - bid: "3NT"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Strong Balanced"
-            constraints:
-              min_hcp: 18
-              shape_requirements: "Balanced"
-              explanation: "Strong balanced hand (18-19 HCP)."
-
-          # 3. FAST ARRIVAL (Minimum)
-          - bid: "4S"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Fast Arrival"
-            constraints:
-              max_hcp: 14 
-              explanation: "Minimum hand, no shortness."
-
-          # 4. SLOW ARRIVAL (Extras)
-          - bid: "3S"
-            type: "Rebid"
-            systems: ["All"]
-            convention: "Extras"
-            constraints:
-              min_hcp: 15 
-              explanation: "Extra values, no shortness."
 
       - bid: "3S"
         type: "Response"
@@ -340,138 +293,6 @@ Dealer:
           min_dummy_points: 13
           shape_requirements: "4+ Spades, Max 1 Heart"
           explanation: "Splinter: Game Force, Support, Shortness in Hearts."
-
-
-# === WEAK TWO BIDS (High frequency!) ===
-  - bid: "2D"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Weak Two"
-    constraints:
-      min_hcp: 5
-      max_hcp: 10
-      shape_requirements: "6 Diamonds"
-    
-    # === NEW: Responses to 2D ===
-    Responder:
-      - bid: "Pass"
-        type: "Response"
-        systems: ["All"]
-        constraints:
-          max_hcp: 14 # Can pass with a decent hand if no fit
-          explanation: "No fit or game interest."
-
-      - bid: "2NT"
-        type: "Response"
-        systems: ["All"]
-        convention: "Feature Ask"
-        forcing_status: "Forcing"
-        constraints:
-          min_hcp: 15
-          explanation: "Feature Ask (15+ HCP)."
-
-  - bid: "2H"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Weak Two"
-    constraints:
-      min_hcp: 5
-      max_hcp: 10
-      shape_requirements: "6 Hearts"
-    
-    # === NEW: Responses to 2H ===
-    Responder:
-      - bid: "Pass"
-        type: "Response"
-        systems: ["All"]
-        constraints:
-          max_hcp: 14 
-      
-      - bid: "2NT"
-        type: "Response"
-        systems: ["All"]
-        convention: "Feature Ask"
-        forcing_status: "Forcing"
-        constraints:
-          min_hcp: 15
-
-      - bid: "3H"
-        type: "Response"
-        systems: ["All"]
-        convention: "Preemptive Raise"
-        constraints:
-          min_hcp: 0
-          max_hcp: 9
-          shape_requirements: "3+ Hearts"
-
-  - bid: "2S"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Weak Two"
-    constraints:
-      min_hcp: 5
-      max_hcp: 10
-      shape_requirements: "6 Spades"
-    
-    # === NEW: Responses to 2S ===
-    Responder:
-      - bid: "Pass"
-        type: "Response"
-        systems: ["All"]
-        constraints:
-          max_hcp: 14 
-
-      - bid: "2NT"
-        type: "Response"
-        systems: ["All"]
-        convention: "Feature Ask"
-        forcing_status: "Forcing"
-        constraints:
-          min_hcp: 15
-      
-      - bid: "3S"
-        type: "Response"
-        systems: ["All"]
-        convention: "Preemptive Raise"
-        constraints:
-          min_hcp: 0
-          max_hcp: 9
-          shape_requirements: "3+ Spades"
-
-  # === PREEMPTIVE BIDS (3-Level) ===
-  - bid: "3C"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Preempt"
-    constraints:
-      max_hcp: 10
-      shape_requirements: "7+ Clubs"
-      explanation: "Preempt: 7+ suit, weak hand."
-
-  - bid: "3D"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Preempt"
-    constraints:
-      max_hcp: 10
-      shape_requirements: "7+ Diamonds"
-
-  - bid: "3H"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Preempt"
-    constraints:
-      max_hcp: 10
-      shape_requirements: "7+ Hearts"
-
-  - bid: "3S"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Preempt"
-    constraints:
-      max_hcp: 10
-      shape_requirements: "7+ Spades"
-
 
   # === 5. 1 HEART OPENING ===
   - bid: "1H"
@@ -657,12 +478,3 @@ Dealer:
         constraints:
           min_hcp: 6
           max_hcp: 10
-
-  # === THE CATCH-ALL (Must be last!) ===
-  - bid: "Pass"
-    type: "Opening"
-    systems: ["All"]
-    convention: "Natural"
-    constraints:
-      max_hcp: 11
-      explanation: "Too weak to open (0-11 HCP). Checked last."
