@@ -1,0 +1,128 @@
+[
+  {
+    "id": 99,
+    "format": "BridgeMaster_v2_Rich",
+    "hands": {
+      "N": {
+        "pbn_string": "AKQ.432.65.JT987",
+        "total_hcp": 10,
+        "distribution": "3=3=2=5",
+        "suits": {
+          "S": {
+            "cards": "AKQ",
+            "hcp": 9,
+            "count": 3
+          },
+          "H": {
+            "cards": "432",
+            "hcp": 0,
+            "count": 3
+          },
+          "D": {
+            "cards": "65",
+            "hcp": 0,
+            "count": 2
+          },
+          "C": {
+            "cards": "JT987",
+            "hcp": 1,
+            "count": 5
+          }
+        }
+      },
+      "E": {
+        "pbn_string": "432.AKQ.87.AKQ32",
+        "total_hcp": 18,
+        "distribution": "3=3=2=5",
+        "suits": {
+          "S": {
+            "cards": "432",
+            "hcp": 0,
+            "count": 3
+          },
+          "H": {
+            "cards": "AKQ",
+            "hcp": 9,
+            "count": 3
+          },
+          "D": {
+            "cards": "87",
+            "hcp": 0,
+            "count": 2
+          },
+          "C": {
+            "cards": "AKQ32",
+            "hcp": 9,
+            "count": 5
+          }
+        }
+      },
+      "S": {
+        "pbn_string": "765.765.AKQJ.654",
+        "total_hcp": 10,
+        "distribution": "3=3=4=3",
+        "suits": {
+          "S": {
+            "cards": "765",
+            "hcp": 0,
+            "count": 3
+          },
+          "H": {
+            "cards": "765",
+            "hcp": 0,
+            "count": 3
+          },
+          "D": {
+            "cards": "AKQJ",
+            "hcp": 10,
+            "count": 4
+          },
+          "C": {
+            "cards": "654",
+            "hcp": 0,
+            "count": 3
+          }
+        }
+      },
+      "W": {
+        "pbn_string": "JT98.JT98.T9432.",
+        "total_hcp": 2,
+        "distribution": "4=4=5=0",
+        "suits": {
+          "S": {
+            "cards": "JT98",
+            "hcp": 1,
+            "count": 4
+          },
+          "H": {
+            "cards": "JT98",
+            "hcp": 1,
+            "count": 4
+          },
+          "D": {
+            "cards": "T9432",
+            "hcp": 0,
+            "count": 5
+          },
+          "C": {
+            "cards": "",
+            "hcp": 0,
+            "count": 0
+          }
+        }
+      }
+    },
+    "auction": [
+      "1S",
+      "Pass",
+      "2D",
+      "Pass"
+    ],
+    "explanations": [
+      "1S: Opening",
+      "Pass: ...",
+      "2D: Response",
+      "Pass: ..."
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "title": "Major Suit Raises",
+  "date": "2025-12-31",
+  "target_sequence": [
+    "1H",
+    "2H"
+  ],
+  "examples": [
+    {
+      "id": 1,
+      "pbn": "N:A.AKQJT.J953.J43 Q.9865.Q8764.KQ9 KJT854.7432.A2.T 97632..KT.A87652",
+      "auction": [
+        "1H",
+        "2H"
+      ],
+      "hands_summary": {
+        "N_hcp": 16,
+        "S_hcp": 8,
+        "N_shape": "1=5=4=3",
+        "S_shape": "6=4=2=1"
+      },
+      "teaching_point": "E: Simple raise with 4+ Hearts and 6-10 HCP."
+    },
+    {
+      "id": 2,
+      "pbn": "N:AJ4.AKJ62.K82.J3 T7.Q953.JT54.KT9 9832.T7.AQ.AQ542 KQ65.84.9763.876",
+      "auction": [
+        "1H",
+        "2H"
+      ],
+      "hands_summary": {
+        "N_hcp": 17,
+        "S_hcp": 12,
+        "N_shape": "3=5=3=2",
+        "S_shape": "4=2=2=5"
+      },
+      "teaching_point": "E: Simple raise with 4+ Hearts and 6-10 HCP."
+    },
+    {
+      "id": 3,
+      "pbn": "N:AK9.AJ976.Q4.Q63 J5.KT543.53.KJ52 QT42.2.JT9862.T7 8763.Q8.AK7.A984",
+      "auction": [
+        "1H",
+        "2H"
+      ],
+      "hands_summary": {
+        "N_hcp": 16,
+        "S_hcp": 3,
+        "N_shape": "3=5=2=3",
+        "S_shape": "4=1=6=2"
+      },
+      "teaching_point": "E: Simple raise with 4+ Hearts and 6-10 HCP."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "bridge_bidding_systems": [
+    {
+      "system_id": "audrey_grant_basic",
+      "name": "Audrey Grant Basic",
+      "level": "Beginner",
+      "description": "Foundational system focusing on natural limit bidding without artificial conventions.",
+      "opening_bids": {
+        "1_level_suit": {
+          "min_points": 12,
+          "majors_length": 5,
+          "minors_length": 3,
+          "description": "Natural. 5-card majors, better minor."
+        },
+        "1_no_trump": {
+          "range": "15-17",
+          "type": "Balanced"
+        },
+        "2_clubs": {
+          "type": "Strong Artificial",
+          "min_points": 22
+        },
+        "weak_twos": {
+          "active": true,
+          "suits": ["2D", "2H", "2S"],
+          "range": "5-10",
+          "length": 6
+        }
+      },
+      "responses": {
+        "1nt_response_to_major": {
+          "forcing": false,
+          "range": "6-9"
+        },
+        "2_over_1": {
+          "style": "Standard",
+          "forcing_level": "One Round",
+          "min_points": 10
+        }
+      },
+      "conventions": {
+        "stayman": false,
+        "jacoby_transfers": false,
+        "jacoby_2nt": false,
+        "blackwood": false,
+        "negative_doubles": false
+      }
+    },
+    {
+      "system_id": "audrey_grant_standard",
+      "name": "Audrey Grant Standard",
+      "level": "Intermediate",
+      "description": "Modern Standard American. 5-card Majors. 15-17 NT. 2/1 is NOT Game Forcing.",
+      "opening_bids": {
+        "1_level_suit": {
+          "min_points": 12,
+          "majors_length": 5,
+          "minors_length": 3,
+          "description": "Natural. 5-card majors."
+        },
+        "1_no_trump": {
+          "range": "15-17",
+          "type": "Balanced"
+        },
+        "2_clubs": {
+          "type": "Strong Artificial",
+          "min_points": 22
+        },
+        "weak_twos": {
+          "active": true,
+          "suits": ["2D", "2H", "2S"],
+          "range": "5-10"
+        }
+      },
+      "responses": {
+        "1nt_response_to_major": {
+          "forcing": false,
+          "range": "6-9"
+        },
+        "2_over_1": {
+          "style": "Standard American (Non-GF)",
+          "forcing_level": "Forcing for ONE ROUND only (10+ HCP)",
+          "note": "Responder promises 10+ points. Opener must bid again, but game is NOT guaranteed."
+        },
+        "responses_to_2nt": {
+             "3c": "Stayman (Asking for 4-card major)",
+             "3d": "Jacoby Transfer to Hearts",
+             "3h": "Jacoby Transfer to Spades"
+        }
+      },
+      "conventions": {
+        "stayman": true,
+        "jacoby_transfers": true,
+        "jacoby_2nt": false,
+        "blackwood": true,
+        "negative_doubles": true
+      }
+    },
+    {
+      "system_id": "sayc",
+      "name": "Standard American Yellow Card",
+      "level": "Tournament Standard",
+      "description": "The ACBL standard convention card designed for partnership consensus.",
+      "opening_bids": {
+        "1_level_suit": {
+          "min_points": 12,
+          "majors_length": 5,
+          "minors_length": 3
+        },
+        "1_no_trump": {
+          "range": "15-17",
+          "type": "Balanced"
+        },
+        "2_clubs": {
+          "type": "Strong Artificial",
+          "min_points": 22
+        },
+        "weak_twos": {
+          "active": true,
+          "range": "5-11"
+        }
+      },
+      "responses": {
+        "1nt_response_to_major": {
+          "forcing": false,
+          "range": "6-9"
+        },
+        "2_over_1": {
+          "style": "Standard",
+          "forcing_level": "One Round",
+          "min_points": 10
+        }
+      },
+      "conventions": {
+        "stayman": true,
+        "jacoby_transfers": true,
+        "jacoby_2nt": true,
+        "blackwood": true,
+        "rkc_1430": false,
+        "negative_doubles": true,
+        "fourth_suit_forcing": true
+      }
+    },
+    {
+      "system_id": "sayc_2_1_gf",
+      "name": "SAYC 2/1 Game Forcing",
+      "level": "Advanced",
+      "description": "SAYC base modified with 2/1 Game Forcing responses and Forcing 1NT.",
+      "opening_bids": {
+        "1_level_suit": {
+          "min_points": 12,
+          "majors_length": 5,
+          "minors_length": 3
+        },
+        "1_no_trump": {
+          "range": "15-17",
+          "type": "Balanced"
+        },
+        "2_clubs": {
+          "type": "Strong Artificial",
+          "min_points": 22
+        }
+      },
+      "responses": {
+        "1nt_response_to_major": {
+          "forcing": true,
+          "range": "6-12",
+          "note": "Forcing 1NT covers hands that cannot bid 2/1 GF"
+        },
+        "2_over_1": {
+          "style": "Game Forcing",
+          "forcing_level": "Game",
+          "min_points": 12,
+          "note": "Responses of 2C, 2D, 2H to a 1S opener (or similar) force to game."
+        }
+      },
+      "conventions": {
+        "stayman": true,
+        "jacoby_transfers": true,
+        "jacoby_2nt": true,
+        "rkc_1430": true,
+        "new_minor_forcing": true,
+        "inverted_minors": true,
+        "splinter_bids": true
+      }
+    }
+  ]
+}

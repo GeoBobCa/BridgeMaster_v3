@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "format": "BridgeMaster_v2_Rich",
+    "hands": {
+      "N": {
+        "pbn_string": "KJT76.KQJ3.Q97.2",
+        "total_hcp": 12,
+        "distribution": "5=4=3=1",
+        "suits": {
+          "S": {
+            "cards": "KJT76",
+            "hcp": 4,
+            "count": 5
+          },
+          "H": {
+            "cards": "KQJ3",
+            "hcp": 6,
+            "count": 4
+          },
+          "D": {
+            "cards": "Q97",
+            "hcp": 2,
+            "count": 3
+          },
+          "C": {
+            "cards": "2",
+            "hcp": 0,
+            "count": 1
+          }
+        }
+      },
+      "E": {
+        "pbn_string": "A42.987.AJT.JT97",
+        "total_hcp": 10,
+        "distribution": "3=3=3=4",
+        "suits": {
+          "S": {
+            "cards": "A42",
+            "hcp": 4,
+            "count": 3
+          },
+          "H": {
+            "cards": "987",
+            "hcp": 0,
+            "count": 3
+          },
+          "D": {
+            "cards": "AJT",
+            "hcp": 5,
+            "count": 3
+          },
+          "C": {
+            "cards": "JT97",
+            "hcp": 1,
+            "count": 4
+          }
+        }
+      },
+      "S": {
+        "pbn_string": "Q8.T2.K652.AKQ83",
+        "total_hcp": 14,
+        "distribution": "2=2=4=5",
+        "suits": {
+          "S": {
+            "cards": "Q8",
+            "hcp": 2,
+            "count": 2
+          },
+          "H": {
+            "cards": "T2",
+            "hcp": 0,
+            "count": 2
+          },
+          "D": {
+            "cards": "K652",
+            "hcp": 3,
+            "count": 4
+          },
+          "C": {
+            "cards": "AKQ83",
+            "hcp": 9,
+            "count": 5
+          }
+        }
+      },
+      "W": {
+        "pbn_string": "953.A654.843.654",
+        "total_hcp": 4,
+        "distribution": "3=4=3=3",
+        "suits": {
+          "S": {
+            "cards": "953",
+            "hcp": 0,
+            "count": 3
+          },
+          "H": {
+            "cards": "A654",
+            "hcp": 4,
+            "count": 4
+          },
+          "D": {
+            "cards": "843",
+            "hcp": 0,
+            "count": 3
+          },
+          "C": {
+            "cards": "654",
+            "hcp": 0,
+            "count": 3
+          }
+        }
+      }
+    },
+    "auction": [
+      "1S",
+      "Pass",
+      "2D",
+      "Pass",
+      "Pass",
+      "Pass"
+    ],
+    "explanations": [
+      "1S: Standard Opening.",
+      "2D: 2/1 Game Force (4+ Diamonds)."
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-from .bridge_model import SUPPORTED_SYSTEMS
+from bridge_model import SUPPORTED_SYSTEMS
 
 def check_hand_compliance(hand_stats, constraints):
     """
