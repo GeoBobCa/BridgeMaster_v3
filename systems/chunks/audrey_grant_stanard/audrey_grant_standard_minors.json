@@ -1,0 +1,280 @@
+{
+  "1NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 15,
+      "max_hcp": 17,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "15-17 HCP, Balanced. Can include 5-card major.",
+      "deep_dive": "Standard practice is to open 1NT with 15-17 HCP and a balanced hand. This may include a 5-card major. ACBL range is 15-17. Some players upgrade 14+ or treat 18-19 as too strong. Semi-balanced hands (e.g. 5-4-2-2) are often treated as balanced."
+    },
+    "meta": {
+      "source": "Grant Standard Summary Chart",
+      "confidence": "High"
+    },
+    "responses": {
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "shape": "Any with 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Stayman Convention.",
+          "deep_dive": "Asks opener for a 4-card major. Opener rebids 2D (no major), 2H (4+ hearts), or 2S (4+ spades). If opener has both, rebid 2H."
+        },
+        "meta": {
+          "source": "Article 4 & 5",
+          "confidence": "High"
+        }
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "shape": "5+ Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Hearts.",
+          "deep_dive": "Asks opener to bid 2H. Responder can then pass (weak), invite (2NT/3H), or force to game."
+        },
+        "meta": {
+          "source": "Article 4 & 5",
+          "confidence": "High"
+        }
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "shape": "5+ Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Spades.",
+          "deep_dive": "Asks opener to bid 2S. Responder can then pass (weak), invite (2NT/3S), or force to game."
+        },
+        "meta": {
+          "source": "Article 4 & 5",
+          "confidence": "High"
+        }
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "shape": "Long minor (usually Clubs)",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Transfer to 3C (Extended Transfers).",
+          "deep_dive": "Used to sign off in a minor. Opener bids 3C. Responder passes with clubs or bids 3D to sign off in diamonds."
+        },
+        "meta": {
+          "source": "Article 1 & Summary Chart",
+          "confidence": "High"
+        }
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 9,
+          "shape": "Balanced",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational to 3NT.",
+          "deep_dive": "Shows 8-9 HCP. Opener passes with minimum, bids 3NT with maximum."
+        },
+        "meta": {
+          "source": "Article 4",
+          "confidence": "High"
+        }
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "shape": "6+ Clubs",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational to 3NT.",
+          "deep_dive": "Shows a long suit and invites opener to bid 3NT with a fit and stoppers."
+        },
+        "meta": {
+          "source": "Article 5 & Summary Chart",
+          "confidence": "High"
+        }
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "shape": "6+ Diamonds",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational to 3NT.",
+          "deep_dive": "Shows a long suit and invites opener to bid 3NT with a fit and stoppers."
+        },
+        "meta": {
+          "source": "Article 5 & Summary Chart",
+          "confidence": "High"
+        }
+      },
+      "4C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 13,
+          "shape": "Balanced/Any",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Gerber (Ace Asking).",
+          "deep_dive": "Asks for aces. Responses: 4D=0/4, 4H=1, 4S=2, 4NT=3."
+        },
+        "meta": {
+          "source": "Article 19",
+          "confidence": "High"
+        }
+      },
+      "4NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 16,
+          "max_hcp": 17,
+          "shape": "Balanced",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Quantitative Invitation to 6NT.",
+          "deep_dive": "Invites opener to bid 6NT with a maximum. Not Blackwood."
+        },
+        "meta": {
+          "source": "Article 16",
+          "confidence": "High"
+        }
+      }
+    }
+  },
+  "2NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 20,
+      "max_hcp": 21,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "20-21 HCP Balanced.",
+      "deep_dive": "Shows a strong balanced hand. Responses similar to 1NT (Stayman, Transfers)."
+    },
+    "meta": {
+      "source": "Summary Chart",
+      "confidence": "High"
+    },
+    "responses": {
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "forcing": true,
+          "shape": "Any with 4c Major"
+        },
+        "teaching": {
+          "nuance": "Stayman.",
+          "deep_dive": "Asks for 4-card major."
+        },
+        "meta": {
+          "source": "Article 6",
+          "confidence": "High"
+        }
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "forcing": true,
+          "shape": "5+ Hearts"
+        },
+        "teaching": {
+          "nuance": "Transfer to Hearts.",
+          "deep_dive": "Jacoby Transfer."
+        },
+        "meta": {
+          "source": "Article 6",
+          "confidence": "High"
+        }
+      },
+      "3H": {
+        "type": "Response",
+        "logic": {
+          "forcing": true,
+          "shape": "5+ Spades"
+        },
+        "teaching": {
+          "nuance": "Transfer to Spades.",
+          "deep_dive": "Jacoby Transfer."
+        },
+        "meta": {
+          "source": "Article 6",
+          "confidence": "High"
+        }
+      }
+    }
+  },
+  "1H": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 13,
+      "max_hcp": 21,
+      "shape": "5+ Hearts",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "5+ Card Major, Opening Values.",
+      "deep_dive": "Standard 5-card major system. In 3rd/4th seat may be lighter. Apply Guideline of 20 for borderline hands."
+    },
+    "meta": {
+      "source": "Article 7",
+      "confidence": "High"
+    },
+    "responses": {
+      "1S": {
+        "type": "Response",
+        "logic": { "min_hcp": 6, "shape": "4+ Spades", "forcing": "1-round" },
+        "teaching": { "nuance": "Forcing New Suit.", "deep_dive": "Shows 4+ spades and 6+ points. Unlimited strength." },
+        "meta": { "source": "Article 7", "confidence": "High" },
+        "responses": {
+          "1NT": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 14, "shape": "Balanced" }, "teaching": { "nuance": "Balanced Min.", "deep_dive": "12-14 HCP, denies 4 spades." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2H": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 15, "shape": "6+ Hearts" }, "teaching": { "nuance": "Min Rebid.", "deep_dive": "Shows extra length, min values. Non-forcing." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2S": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 15, "shape": "4 Spades" }, "teaching": { "nuance": "Simple Raise.", "deep_dive": "Found fit. Minimum." }, "meta": { "source": "GS", "confidence": "High" } },
+          "3S": { "type": "Rebid", "logic": { "min_hcp": 16, "max_hcp": 18, "shape": "4 Spades" }, "teaching": { "nuance": "Limit Raise.", "deep_dive": "Invitational raise." }, "meta": { "source": "GS", "confidence": "High" } },
+          "4S": { "type": "Rebid", "logic": { "min_hcp": 19, "shape": "4 Spades" }, "teaching": { "nuance": "Game Raise.", "deep_dive": "To play." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2C": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 16, "shape": "4+ Clubs" }, "teaching": { "nuance": "New Suit.", "deep_dive": "Non-forcing." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2D": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 16, "shape": "4+ Diamonds" }, "teaching": { "nuance": "New Suit.", "deep_dive": "Non-forcing." }, "meta": { "source": "GS", "confidence": "High" } }
+        }
+      },
+      "1NT": {
+        "type": "Response",
+        "logic": { "min_hcp": 6, "max_hcp": 10, "shape": "No 4+ Spades", "forcing": "1-round" },
+        "teaching": { "nuance": "Semi-forcing / Dustbin.", "deep_dive": "Denies 4 spades. 6-10 HCP. Opener cannot pass with a singleton." },
+        "meta": { "source": "Summary Chart", "confidence": "High" },
+        "responses": {
+          "Pass": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 14, "shape": "Balanced" }, "teaching": { "nuance": "Pass.", "deep_dive": "Balanced minimum." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2C": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 16, "shape": "3+ Clubs" }, "teaching": { "nuance": "New Suit.", "deep_dive": "Non-forcing. Likely 5-4 or better." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2D": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 16, "shape": "3+ Diamonds" }, "teaching": { "nuance": "New Suit.", "deep_dive": "Non-forcing." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2H": { "type": "Rebid", "logic": { "min_hcp": 12, "max_hcp": 15, "shape": "6+ Hearts" }, "teaching": { "nuance": "Min Rebid.", "deep_dive": "6+ hearts. Non-forcing." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2NT": { "type": "Rebid", "logic": { "min_hcp": 18, "max_hcp": 19, "shape": "Balanced" }, "teaching": { "nuance": "Strong Balanced.", "deep_dive": "Too strong for 1NT opening." }, "meta": { "source": "GS", "confidence": "High" } },
+          "3H": { "type": "Rebid", "logic": { "min_hcp": 16, "max_hcp": 18, "shape": "6+ Hearts" }, "teaching": { "nuance": "Inv Rebid.", "deep_dive": "Strong playing hand." }, "meta": { "source": "GS", "confidence": "High" } }
+        }
+      },
+      "2C": {
+        "type": "Response",
+        "logic": { "min_hcp": 10, "shape": "3+ Clubs", "forcing": "1-round" },
+        "teaching": { "

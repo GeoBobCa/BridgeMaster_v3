@@ -1,0 +1,630 @@
+- system: audrey_grant_standard
+  auction: []
+  bid: 1NT
+  type: Opening
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: Balanced, may include 5-card major
+    explanation: The standard strong notrump. Known for its clarity and immediate limit on the hand's strength.
+    nuance: ACBL regulations require the range to be announced as 'fourteen plus to seventeen'. If the hand is 12-14 or 18-19 balanced, you must open a suit first and rebid notrump. This opening can include a five-card major suit as long as the hand is balanced.
+    source: Notrump Openings, Page 1 & 2
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  bid: 2C
+  type: Response
+  constraints:
+    min_hcp: 8
+    max_hcp: 37
+    shape_requirements: At least one 4-card major
+    explanation: Stayman Convention.
+    nuance: "Used with 8+ points and at least one four-card major. Opener's priorities: 2D shows no 4-card major, 2H shows 4+ hearts, 2S shows 4+ spades. Exception: with both majors, opener rebids 2H first."
+    source: Responding to 1NT, Page 1 & 2
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  - 2C
+  bid: 2D
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: No 4-card major
+    explanation: Denial of major suits.
+    nuance: Responder bids 2NT (inv) or 3NT (to play).
+    source: Responding to 1NT, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  - 2C
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: 4+ Hearts
+    explanation: Hearts found. Might also have 4 Spades.
+    nuance: If opener has both majors, the system mandates bidding 2H first.
+    source: Responding to 1NT, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  - 2C
+  bid: 2S
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: 4+ Spades
+    explanation: Spades found. Denies 4 Hearts.
+    nuance: Bid only if hearts are not held, as 2H would have been the priority with both.
+    source: Responding to 1NT, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  bid: 2D
+  type: Response
+  constraints:
+    min_hcp: 0
+    max_hcp: 37
+    shape_requirements: 5+ Hearts
+    explanation: Jacoby Transfer to Hearts.
+    nuance: Commands opener to bid 2H. No strength required. Protects the strong hand from the opening lead.
+    source: Grant Standard (Jacoby Transfer Bids), Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  - 2D
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: 2+ Hearts
+    explanation: Transfer accepted.
+    nuance: Mandatory rebid for the opener regardless of heart length (min 2).
+    source: Grant Standard (Jacoby Transfer Bids), Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  bid: 2H
+  type: Response
+  constraints:
+    min_hcp: 0
+    max_hcp: 37
+    shape_requirements: 5+ Spades
+    explanation: Jacoby Transfer to Spades.
+    nuance: Commands opener to bid 2S. Allows responder to pass 2S with a weak hand or continue with better values.
+    source: Grant Standard (Jacoby Transfer Bids), Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1NT
+  - 2H
+  bid: 2S
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 17
+    shape_requirements: 2+ Spades
+    explanation: Transfer accepted.
+    nuance: Opener completes the transfer.
+    source: Grant Standard (Jacoby Transfer Bids), Page 1
+- system: audrey_grant_standard
+  auction: []
+  bid: 1H
+  type: Opening
+  constraints:
+    min_hcp: 12
+    max_hcp: 21
+    shape_requirements: 5+ Hearts
+    explanation: Hearts Opening.
+    nuance: Evaluation of 12-point hands depends on suit quality. Grant Standard prioritizes 5-card majors. With 12-14 balanced, open 1H and rebid 1NT or Pass partner's 1NT.
+    source: Major Suit Openings and Responses, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  bid: 1NT
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: Balanced; no fit
+    explanation: The Dustbin 1NT.
+    nuance: Non-forcing. Shows 6-10 points. Opener should pass with minimum balanced hands (12-14).
+    source: Responding to One of a Suit, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1NT
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 15
+    shape_requirements: 6+ Hearts
+    explanation: Suit rebid.
+    nuance: Shows extra length but minimum strength. Not forcing.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1NT
+  bid: 2C
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 17
+    shape_requirements: 4+ Clubs, unbalanced
+    explanation: New suit rebid.
+    nuance: Shows a second suit; non-forcing. Promises unbalanced hand.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1NT
+  bid: 2D
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 17
+    shape_requirements: 4+ Diamonds, unbalanced
+    explanation: New suit rebid.
+    nuance: Natural second suit.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1NT
+  bid: 2NT
+  type: Rebid
+  constraints:
+    min_hcp: 18
+    max_hcp: 19
+    shape_requirements: Balanced
+    explanation: Invitational rebid.
+    nuance: Opener has too much for Pass but not enough for 3NT.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  bid: 2H
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: 3+ Hearts (dummy points)
+    explanation: Simple Raise.
+    nuance: Constructive limit bid. Responder has a fit.
+    source: The Raise, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 2H
+  bid: 3H
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 15
+    shape_requirements: Any with fit
+    explanation: Invitational rebid (Game Try).
+    nuance: Asking responder to bid 4H with 8-10 points.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 2H
+  bid: 4H
+  type: Rebid
+  constraints:
+    min_hcp: 16
+    max_hcp: 18
+    shape_requirements: Any with fit
+    explanation: Game bid.
+    nuance: Partnership has 25+ combined points.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  bid: 1S
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 37
+    shape_requirements: 4+ Spades
+    explanation: Forcing major response.
+    nuance: New suit at the one level is forcing. Opener must rebid.
+    source: Responding to One of a Suit, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1S
+  bid: 2S
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: 4-card support
+    explanation: Minimum support.
+    nuance: Raised partner's suit at the minimum level. Denies extra strength.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1S
+  bid: 3S
+  type: Rebid
+  constraints:
+    min_hcp: 15
+    max_hcp: 17
+    shape_requirements: 4-card support
+    explanation: Invitational support.
+    nuance: Shows medium range opening with fit.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1S
+  bid: 1NT
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: Balanced
+    explanation: Balanced minimum rebid.
+    nuance: Denies 4 spades or 6 hearts.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1S
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 15
+    shape_requirements: 6+ Hearts
+    explanation: Natural suit rebid.
+    nuance: Showing extra length in hearts.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1H
+  - 1S
+  bid: 2C
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 17
+    shape_requirements: 4+ Clubs
+    explanation: New suit rebid.
+    nuance: Natural second suit.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction: []
+  bid: 1S
+  type: Opening
+  constraints:
+    min_hcp: 12
+    max_hcp: 21
+    shape_requirements: 5+ Spades
+    explanation: Spades Opening.
+    nuance: Prioritize 5-card majors.
+    source: Major Suit Openings and Responses, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  bid: 1NT
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: Balanced; no fit
+    explanation: Dustbin bid.
+    nuance: Not forcing. Opener can pass with minimum balanced hands (12-14).
+    source: Responding to One of a Suit, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  - 1NT
+  bid: 2S
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 15
+    shape_requirements: 6+ Spades
+    explanation: Suit rebid.
+    nuance: Confirms extra length.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  - 1NT
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 17
+    shape_requirements: 4+ Hearts
+    explanation: New suit.
+    nuance: Shows 5 spades and 4 hearts.
+    source: Opener's Rebids, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  bid: 2S
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: 3+ Spades
+    explanation: Simple Raise.
+    nuance: Constructive fit.
+    source: The Raise, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  - 2S
+  bid: 3S
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 15
+    shape_requirements: Fit
+    explanation: Invitational.
+    nuance: Game Try.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1S
+  - 2S
+  bid: 4S
+  type: Rebid
+  constraints:
+    min_hcp: 16
+    max_hcp: 18
+    shape_requirements: Fit
+    explanation: To game.
+    nuance: Enough for game.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction: []
+  bid: 1C
+  type: Opening
+  constraints:
+    min_hcp: 12
+    max_hcp: 21
+    shape_requirements: 3+ Clubs. Open 1C with 3-3 in minors.
+    explanation: Minor Opening.
+    nuance: The 'convenient' minor. When holding 3-3 in minors, open 1C. When holding 4-4 or longer, open 1D.
+    source: Minor Suit Openings and Responses, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  bid: 1H
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 37
+    shape_requirements: 4+ Hearts
+    explanation: Major priority.
+    nuance: Searching for a 4-4 major suit fit.
+    source: Minor Suit Openings and Responses, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  - 1H
+  bid: 1S
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: 4-card Spades
+    explanation: Up the line rebid.
+    nuance: Shows 4 spades and denies 4 hearts. Natural.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  - 1H
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: 4-card support
+    explanation: Minimum raise.
+    nuance: Fit found with minimum opening values.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  - 1H
+  bid: 1NT
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: Balanced
+    explanation: Balanced minimum rebid.
+    nuance: Denies 4-card major fit.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  - 1H
+  bid: 3H
+  type: Rebid
+  constraints:
+    min_hcp: 15
+    max_hcp: 17
+    shape_requirements: 4-card support
+    explanation: Invitational raise.
+    nuance: Showing medium range opening with fit.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  bid: 2C
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: 4+ Clubs
+    explanation: Simple Minor Raise.
+    nuance: Standard raise (6-10). Non-forcing.
+    source: Minor Suit Openings and Responses, Page 3
+- system: audrey_grant_standard
+  auction:
+  - 1C
+  - 2C
+  bid: 3C
+  type: Rebid
+  constraints:
+    min_hcp: 14
+    max_hcp: 15
+    shape_requirements: Fit
+    explanation: Invitational minor raise.
+    nuance: Game Try in Clubs or NT.
+    source: Opener's Rebids, Page 3
+- system: audrey_grant_standard
+  auction: []
+  bid: 1D
+  type: Opening
+  constraints:
+    min_hcp: 12
+    max_hcp: 21
+    shape_requirements: 4+ Diamonds (rarely 3 if 4-4-3-2)
+    explanation: Minor Opening.
+    nuance: Promises 4+ Diamonds in most cases. Open the longer minor.
+    source: Minor Suit Openings and Responses, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1D
+  bid: 1H
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 37
+    shape_requirements: 4+ Hearts
+    explanation: Major priority.
+    nuance: Always prioritize majors over supporting minors.
+    source: Minor Suit Openings and Responses, Page 2
+- system: audrey_grant_standard
+  auction:
+  - 1D
+  - 1H
+  bid: 1S
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: 4-card Spades
+    explanation: Natural search.
+    nuance: Looking for 4-4 spade fit.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1D
+  - 1H
+  bid: 1NT
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: Balanced
+    explanation: Balanced minimum.
+    nuance: No fit found.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1D
+  - 1H
+  bid: 2H
+  type: Rebid
+  constraints:
+    min_hcp: 12
+    max_hcp: 14
+    shape_requirements: 4-card support
+    explanation: Minimum raise.
+    nuance: Fit found.
+    source: Opener's Rebids, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 1D
+  bid: 2D
+  type: Response
+  constraints:
+    min_hcp: 6
+    max_hcp: 10
+    shape_requirements: 4+ Diamonds
+    explanation: Simple Minor Raise.
+    nuance: Standard raise (6-10).
+    source: Minor Suit Openings and Responses, Page 3
+- system: audrey_grant_standard
+  auction: []
+  bid: 2C
+  type: Opening
+  constraints:
+    min_hcp: 22
+    max_hcp: 37
+    shape_requirements: Balanced (22+) or Unbalanced (9+ playing tricks)
+    explanation: Strong Artificial Opening.
+    nuance: The strongest possible opening. Forcing to game in almost all sequences. Rebid NT or Suit naturally.
+    source: The 2C Opening and Responses, Page 1
+- system: audrey_grant_standard
+  auction:
+  - 2C
+  bid: 2D
+  type: Response
+  constraints:
+    min_hcp: 0
+    max_hcp: 37
+    shape_requirements: Any
+    explanation: Waiting bid.
+    nuance: The standard neutral response to allow opener to describe their hand.
+    source: The 2C Opening and Responses, Page 1
+- system: audrey_grant_standard
+  auction: []
+  bid: 2NT
+  type: Opening
+  constraints:
+    min_hcp: 20
+    max_hcp: 21
+    shape_requirements: Balanced
+    explanation: Strong balanced opening.
+    nuance: 20-21 HCP. Responses are similar to 1NT but shifted to 3-level.
+    source: Notrump Openings, Page 1
+- system: audrey_grant_standard
+  auction: []
+  bid: 2D
+  type: Opening
+  constraints:
+    min_hcp: 5
+    max_hcp: 11
+    shape_requirements: 6-card Diamond suit
+    explanation: Weak Two Bid.
+    nuance: Preemptive opening to obstruct opponents.
+    source: Weak Two-Bids and Responses, Page 1
+- system: audrey_grant_standard
+  auction: []
+  bid: 2H
+  type: Opening
+  constraints:
+    min_hcp: 5
+    max_hcp: 11
+    shape_requirements: 6-card Heart suit
+    explanation: Weak Two Bid.
+    nuance: Preemptive opening.
+    source: Weak Two-Bids and Responses, Page 1
+- system: audrey_grant_standard
+  auction: []
+  bid: 2S
+  type: Opening
+  constraints:
+    min_hcp: 5
+    max_hcp: 11
+    shape_requirements: 6-card Spade suit
+    explanation: Weak Two Bid.
+    nuance: Obstructive opening.
+    source: Weak Two-Bids and Responses, Page 1

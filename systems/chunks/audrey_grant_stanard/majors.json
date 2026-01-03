@@ -1,0 +1,243 @@
+{
+  "1NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 15,
+      "max_hcp": 17,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "15-17 HCP, Balanced.",
+      "deep_dive": "Standard practice is to open 1NT with 15-17 HCP and a balanced hand. May include a 5-card major. Hand should not have a singleton."
+    },
+    "meta": {
+      "source": "Grant Standard",
+      "confidence": "High"
+    },
+    "responses": {
+      "2C": {
+        "type": "Convention",
+        "logic": {
+          "min_hcp": 8,
+          "shape": "Any with 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Stayman.",
+          "deep_dive": "Asks opener for a 4-card major. Requires 8+ HCP."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        },
+        "responses": {
+          "2D": { "type": "Rebid", "logic": { "shape": "No 4-card Major" }, "teaching": { "nuance": "No Major.", "deep_dive": "Opener denies holding 4 hearts or 4 spades." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2H": { "type": "Rebid", "logic": { "shape": "4 Hearts" }, "teaching": { "nuance": "4 Hearts.", "deep_dive": "May also have 4 spades (up the line not strictly required here in some methods, but standard is bid hearts first)." }, "meta": { "source": "GS", "confidence": "High" } },
+          "2S": { "type": "Rebid", "logic": { "shape": "4 Spades" }, "teaching": { "nuance": "4 Spades.", "deep_dive": "Denies 4 hearts." }, "meta": { "source": "GS", "confidence": "High" } }
+        }
+      },
+      "2D": {
+        "type": "Convention",
+        "logic": {
+          "min_hcp": 0,
+          "shape": "5+ Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Hearts.",
+          "deep_dive": "Announces 5+ hearts. Opener must rebid 2H."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        },
+        "responses": {
+          "2H": { 
+            "type": "Rebid", 
+            "logic": { "shape": "Forced" }, 
+            "teaching": { "nuance": "Accept Transfer.", "deep_dive": "Opener must bid 2H." }, 
+            "meta": { "source": "GS", "confidence": "High" },
+            "responses": {
+              "Pass": { "type": "Response", "logic": { "max_hcp": 7 }, "teaching": { "nuance": "Weak.", "deep_dive": "To play." }, "meta": { "source": "GS", "confidence": "High" } },
+              "2NT": { "type": "Response", "logic": { "min_hcp": 8, "max_hcp": 9, "shape": "5 Hearts" }, "teaching": { "nuance": "Invitational.", "deep_dive": "Invites game. Balanced hand with 5 hearts." }, "meta": { "source": "GS", "confidence": "High" } },
+              "3H": { "type": "Response", "logic": { "min_hcp": 8, "max_hcp": 9, "shape": "6+ Hearts" }, "teaching": { "nuance": "Invitational.", "deep_dive": "Invites game. Long hearts." }, "meta": { "source": "GS", "confidence": "High" } },
+              "3NT": { "type": "Response", "logic": { "min_hcp": 10, "max_hcp": 15, "shape": "5 Hearts" }, "teaching": { "nuance": "Choice of Game.", "deep_dive": "Opener passes with 2 hearts, corrects to 4H with 3+." }, "meta": { "source": "GS", "confidence": "High" } },
+              "4H": { "type": "Response", "logic": { "min_hcp": 10, "shape": "6+ Hearts" }, "teaching": { "nuance": "Game.", "deep_dive": "To play." }, "meta": { "source": "GS", "confidence": "High" } }
+            }
+          }
+        }
+      },
+      "2H": {
+        "type": "Convention",
+        "logic": {
+          "min_hcp": 0,
+          "shape": "5+ Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Spades.",
+          "deep_dive": "Announces 5+ spades. Opener must rebid 2S."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        },
+        "responses": {
+          "2S": { 
+            "type": "Rebid", 
+            "logic": { "shape": "Forced" }, 
+            "teaching": { "nuance": "Accept Transfer.", "deep_dive": "Opener must bid 2S." }, 
+            "meta": { "source": "GS", "confidence": "High" },
+            "responses": {
+              "Pass": { "type": "Response", "logic": { "max_hcp": 7 }, "teaching": { "nuance": "Weak.", "deep_dive": "To play." }, "meta": { "source": "GS", "confidence": "High" } },
+              "2NT": { "type": "Response", "logic": { "min_hcp": 8, "max_hcp": 9, "shape": "5 Spades" }, "teaching": { "nuance": "Invitational.", "deep_dive": "Invites game. Balanced hand with 5 spades." }, "meta": { "source": "GS", "confidence": "High" } },
+              "3S": { "type": "Response", "logic": { "min_hcp": 8, "max_hcp": 9, "shape": "6+ Spades" }, "teaching": { "nuance": "Invitational.", "deep_dive": "Invites game. Long spades." }, "meta": { "source": "GS", "confidence": "High" } },
+              "3NT": { "type": "Response", "logic": { "min_hcp": 10, "max_hcp": 15, "shape": "5 Spades" }, "teaching": { "nuance": "Choice of Game.", "deep_dive": "Opener passes with 2 spades, corrects to 4S with 3+." }, "meta": { "source": "GS", "confidence": "High" } },
+              "4S": { "type": "Response", "logic": { "min_hcp": 10, "shape": "6+ Spades" }, "teaching": { "nuance": "Game.", "deep_dive": "To play." }, "meta": { "source": "GS", "confidence": "High" } }
+            }
+          }
+        }
+      },
+      "2S": {
+        "type": "Convention",
+        "logic": {
+          "shape": "Long minor / Relay",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Transfer to Clubs (or Relay).",
+          "deep_dive": "Forces opener to 3C. Responder can then Pass (Clubs) or bid 3D (Diamonds)."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        },
+        "responses": {
+          "3C": { "type": "Rebid", "logic": { "shape": "Forced" }, "teaching": { "nuance": "Forced.", "deep_dive": "Opener bids 3C." }, "meta": { "source": "GS", "confidence": "High" } }
+        }
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 9,
+          "shape": "Balanced",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational.",
+          "deep_dive": "Invites opener to bid 3NT with a maximum (17) or good 16."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        }
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "shape": "6+ Clubs",
+          "forcing": "game"
+        },
+        "teaching": {
+          "nuance": "Slam Interest / Game Force.",
+          "deep_dive": "Shows strong suit, slam interest."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        }
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "shape": "6+ Diamonds",
+          "forcing": "game"
+        },
+        "teaching": {
+          "nuance": "Slam Interest / Game Force.",
+          "deep_dive": "Shows strong suit, slam interest."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        }
+      },
+      "4C": {
+        "type": "Convention",
+        "logic": {
+          "min_hcp": 13,
+          "shape": "Any",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Gerber.",
+          "deep_dive": "Ace asking: 4D=0/4, 4H=1, 4S=2, 4NT=3."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        }
+      },
+      "4NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 16,
+          "max_hcp": 17,
+          "shape": "Balanced",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Quantitative.",
+          "deep_dive": "Invites 6NT."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        }
+      }
+    }
+  },
+  "2NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 20,
+      "max_hcp": 21,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "20-21 HCP, Balanced.",
+      "deep_dive": "Systems on (Stayman, Transfers)."
+    },
+    "meta": {
+      "source": "Grant Standard",
+      "confidence": "High"
+    },
+    "responses": {
+      "3C": {
+        "type": "Convention",
+        "logic": {
+          "shape": "4-card Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Stayman.",
+          "deep_dive": "Asks for 4-card major."
+        },
+        "meta": {
+          "source": "Grant Standard",
+          "confidence": "High"
+        },
+        "responses": {
+          "3D": { "type": "Rebid", "logic": { "shape": "No major" }, "teaching": { "nuance": "No Major.", "deep_dive": "Denies 4 hearts or spades." }, "meta": { "source": "GS", "confidence": "High" } },
+          "3H": { "type": "Rebid", "logic": { "shape": "4 Hearts" }, "teaching": { "nuance": "4 Hearts.", "deep_dive": "Shows 4 hearts." }, "meta": { "source": "GS", "confidence": "High" } },
+          "3S": { "type": "Rebid", "logic": { "shape": "4 Spades" }, "teaching": { "nuance": "4 Spades.", "deep_dive": "Shows 4 spades." }, "meta": { "source": "GS", "confidence": "High" } }
+        }
+      },
+      "3D": {
+        "type": "Convention",
+        "logic":
