@@ -1,0 +1,922 @@
+{
+  "1NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 14,
+      "max_hcp": 17,
+      "shape": "Balanced, may include 5-card major",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "The standard strong notrump. Known for its clarity and immediate limit on the hand's strength.",
+      "deep_dive": "ACBL regulations require the range to be announced as 'fourteen plus to seventeen'. If the hand is 12-14 or 18-19 balanced, you must open a suit first and rebid notrump. This opening can include a five-card major suit as long as the hand is balanced."
+    },
+    "meta": {
+      "source": "Notrump Openings, Page 1 & 2",
+      "confidence": "High"
+    },
+    "responses": {
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 37,
+          "shape": "At least one 4-card major",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Stayman Convention.",
+          "deep_dive": "Used with 8+ points and at least one four-card major. Opener's priorities: 2D shows no 4-card major, 2H shows 4+ hearts, 2S shows 4+ spades. Exception: with both majors, opener rebids 2H first."
+        },
+        "meta": {
+          "source": "Responding to 1NT, Page 1 & 2",
+          "confidence": "High"
+        },
+        "responses": {
+          "2D": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 14,
+              "max_hcp": 17,
+              "shape": "No 4-card major",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Denial of major suits.",
+              "deep_dive": "Responder bids 2NT (inv) or 3NT (to play)."
+            },
+            "meta": {
+              "source": "Responding to 1NT, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 14,
+              "max_hcp": 17,
+              "shape": "4+ Hearts",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Hearts found. Might also have 4 Spades.",
+              "deep_dive": "If opener has both majors, the system mandates bidding 2H first."
+            },
+            "meta": {
+              "source": "Responding to 1NT, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 14,
+              "max_hcp": 17,
+              "shape": "4+ Spades",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Spades found. Denies 4 Hearts.",
+              "deep_dive": "Bid only if hearts are not held, as 2H would have been the priority with both."
+            },
+            "meta": {
+              "source": "Responding to 1NT, Page 2",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 37,
+          "shape": "5+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Hearts.",
+          "deep_dive": "Commands opener to bid 2H. No strength required. Protects the strong hand from the opening lead."
+        },
+        "meta": {
+          "source": "Grant Standard (Jacoby Transfer Bids), Page 1",
+          "confidence": "High"
+        },
+        "responses": {
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 14,
+              "max_hcp": 17,
+              "shape": "2+ Hearts",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Transfer accepted.",
+              "deep_dive": "Mandatory rebid for the opener regardless of heart length (min 2)."
+            },
+            "meta": {
+              "source": "Grant Standard (Jacoby Transfer Bids), Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 37,
+          "shape": "5+ Spades",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Spades.",
+          "deep_dive": "Commands opener to bid 2S. Allows responder to pass 2S with a weak hand or continue with better values."
+        },
+        "meta": {
+          "source": "Grant Standard (Jacoby Transfer Bids), Page 1",
+          "confidence": "High"
+        },
+        "responses": {
+          "2S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 14,
+              "max_hcp": 17,
+              "shape": "2+ Spades",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Transfer accepted.",
+              "deep_dive": "Opener completes the transfer."
+            },
+            "meta": {
+              "source": "Grant Standard (Jacoby Transfer Bids), Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      }
+    }
+  },
+  "1H": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "5+ Hearts",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Hearts Opening.",
+      "deep_dive": "Evaluation of 12-point hands depends on suit quality. Grant Standard prioritizes 5-card majors. With 12-14 balanced, open 1H and rebid 1NT or Pass partner's 1NT."
+    },
+    "meta": {
+      "source": "Major Suit Openings and Responses, Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "Balanced; no fit",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Weak Response (6-9 HCP).",
+          "deep_dive": "Non-forcing. Shows 6-10 points. Opener should pass with minimum balanced hands (12-14)."
+        },
+        "meta": {
+          "source": "Responding to One of a Suit, Page 2",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Balanced minimum rebid.",
+              "deep_dive": "Opener is satisfied with 1NT. Partnership total is max 24."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 15,
+              "shape": "6+ Hearts",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Suit rebid.",
+              "deep_dive": "Shows extra length but minimum strength. Not forcing."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2C": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 17,
+              "shape": "4+ Clubs, unbalanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "New suit rebid.",
+              "deep_dive": "Shows a second suit; non-forcing. Promises unbalanced hand."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2D": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 17,
+              "shape": "4+ Diamonds, unbalanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "New suit rebid.",
+              "deep_dive": "Natural second suit."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 18,
+              "max_hcp": 19,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Invitational rebid.",
+              "deep_dive": "Opener has too much for Pass but not enough for 3NT."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 3",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "3+ Hearts (dummy points)",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Raise.",
+          "deep_dive": "Constructive limit bid. Responder has a fit."
+        },
+        "meta": {
+          "source": "The Raise, Page 1",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 13,
+              "shape": "Any",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum pass.",
+              "deep_dive": "No game interest. Total points 18-23."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "4H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 16,
+              "max_hcp": 18,
+              "shape": "Any with fit",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Game bid.",
+              "deep_dive": "Partnership has 25+ combined points."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 3",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "1S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 37,
+          "shape": "4+ Spades",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Forcing major response.",
+          "deep_dive": "New suit at the one level is forcing. Opener must rebid."
+        },
+        "meta": {
+          "source": "Responding to One of a Suit, Page 1",
+          "confidence": "High"
+        },
+        "responses": {
+          "2S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "4-card support",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum support.",
+              "deep_dive": "Raised partner's suit at the minimum level. Denies extra strength."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "1NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Balanced minimum rebid.",
+              "deep_dive": "Denies 4 spades or 6 hearts."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 15,
+              "shape": "6+ Hearts",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Natural suit rebid.",
+              "deep_dive": "Showing extra length in hearts."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2C": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 17,
+              "shape": "4+ Clubs",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "New suit rebid.",
+              "deep_dive": "Natural second suit."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          }
+        }
+      }
+    }
+  },
+  "1S": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "5+ Spades",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Spades Opening.",
+      "deep_dive": "Prioritize 5-card majors."
+    },
+    "meta": {
+      "source": "Major Suit Openings and Responses, Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "Balanced; no fit",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Weak Response (6-9 HCP).",
+          "deep_dive": "Not forcing. Opener can pass with minimum balanced hands (12-14)."
+        },
+        "meta": {
+          "source": "Responding to One of a Suit, Page 2",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Balanced min pass.",
+              "deep_dive": "Ends auction."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "2S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 15,
+              "shape": "6+ Spades",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Suit rebid.",
+              "deep_dive": "Confirms extra length."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 17,
+              "shape": "4+ Hearts",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "New suit.",
+              "deep_dive": "Shows 5 spades and 4 hearts."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 2",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "3+ Spades",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Raise.",
+          "deep_dive": "Constructive fit."
+        },
+        "meta": {
+          "source": "The Raise, Page 1",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 13,
+              "shape": "Any",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Min pass.",
+              "deep_dive": "No game interest."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "4S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 16,
+              "max_hcp": 18,
+              "shape": "Fit",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "To game.",
+              "deep_dive": "Enough for game."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 3",
+              "confidence": "High"
+            }
+          }
+        }
+      }
+    }
+  },
+  "1C": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "3+ Clubs. Open 1C with 3-3 in minors.",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Minor Opening.",
+      "deep_dive": "The 'convenient' minor. When holding 3-3 in minors, open 1C. When holding 4-4 or longer, open 1D."
+    },
+    "meta": {
+      "source": "Minor Suit Openings and Responses, Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 37,
+          "shape": "4+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Major priority.",
+          "deep_dive": "Searching for a 4-4 major suit fit."
+        },
+        "meta": {
+          "source": "Minor Suit Openings and Responses, Page 2",
+          "confidence": "High"
+        },
+        "responses": {
+          "1S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "4-card Spades",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Up the line rebid.",
+              "deep_dive": "Shows 4 spades and denies 4 hearts. Natural."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "4-card support",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum raise.",
+              "deep_dive": "Fit found with minimum opening values."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "1NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Balanced minimum rebid.",
+              "deep_dive": "Denies 4-card major fit."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "4+ Clubs",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Minor Raise.",
+          "deep_dive": "Standard raise (6-10). Non-forcing."
+        },
+        "meta": {
+          "source": "Minor Suit Openings and Responses, Page 3",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Any",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum pass.",
+              "deep_dive": "Satisfied with part-score. Total 18-24."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      }
+    }
+  },
+  "1D": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "4+ Diamonds (rarely 3 if 4-4-3-2)",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Minor Opening.",
+      "deep_dive": "Promises 4+ Diamonds in most cases. Open the longer minor."
+    },
+    "meta": {
+      "source": "Minor Suit Openings and Responses, Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 37,
+          "shape": "4+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Major priority.",
+          "deep_dive": "Always prioritize majors over supporting minors."
+        },
+        "meta": {
+          "source": "Minor Suit Openings and Responses, Page 2",
+          "confidence": "High"
+        },
+        "responses": {
+          "1S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "4-card Spades",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Natural search.",
+              "deep_dive": "Looking for 4-4 spade fit."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "1NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Balanced",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Balanced minimum.",
+              "deep_dive": "No fit found."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          },
+          "2H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "4-card support",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum raise.",
+              "deep_dive": "Fit found."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "4+ Diamonds",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Minor Raise.",
+          "deep_dive": "Standard raise (6-10)."
+        },
+        "meta": {
+          "source": "Minor Suit Openings and Responses, Page 3",
+          "confidence": "High"
+        },
+        "responses": {
+          "Pass": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "Any",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum pass.",
+              "deep_dive": "Part-score termination."
+            },
+            "meta": {
+              "source": "Opener's Rebids, Page 1",
+              "confidence": "High"
+            }
+          }
+        }
+      }
+    }
+  },
+  "2C": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 22,
+      "max_hcp": 37,
+      "shape": "Balanced (22+) or Unbalanced (9+ playing tricks)",
+      "forcing": true
+    },
+    "teaching": {
+      "nuance": "Strong Artificial Opening.",
+      "deep_dive": "The strongest possible opening. Forcing to game in almost all sequences. Rebid NT or Suit naturally."
+    },
+    "meta": {
+      "source": "The 2C Opening and Responses, Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 37,
+          "shape": "Any",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Waiting bid.",
+          "deep_dive": "The standard neutral response to allow opener to describe their hand."
+        },
+        "meta": {
+          "source": "The 2C Opening and Responses, Page 1",
+          "confidence": "High"
+        }
+      }
+    }
+  },
+  "2NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 20,
+      "max_hcp": 21,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Strong balanced opening.",
+      "deep_dive": "20-21 HCP. Responses are similar to 1NT but shifted to 3-level."
+    },
+    "meta": {
+      "source": "Notrump Openings, Page 1",
+      "confidence": "High"
+    }
+  },
+  "2D": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6-card Diamond suit",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two Bid.",
+      "deep_dive": "Preemptive opening to obstruct opponents."
+    },
+    "meta": {
+      "source": "Weak Two-Bids and Responses, Page 1",
+      "confidence": "High"
+    }
+  },
+  "2H": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6-card Heart suit",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two Bid.",
+      "deep_dive": "Preemptive opening."
+    },
+    "meta": {
+      "source": "Weak Two-Bids and Responses, Page 1",
+      "confidence": "High"
+    }
+  },
+  "2S": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6-card Spade suit",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two Bid.",
+      "deep_dive": "Obstructive opening."
+    },
+    "meta": {
+      "source": "Weak Two-Bids and Responses, Page 1",
+      "confidence": "High"
+    }
+  }
+}
