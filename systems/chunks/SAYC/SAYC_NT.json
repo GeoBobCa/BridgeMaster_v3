@@ -1,0 +1,386 @@
+{
+    "1NT": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 15,
+            "max_hcp": 17,
+            "shape": "Balanced",
+            "forcing": false
+        },
+        "teaching": {
+            "nuance": "Standard No Trump.",
+            "deep_dive": "15-17 HCP balanced hand. May have a 5-card major (usually spread 5-3-3-2). System ON (Stayman, Transfers)."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "2C": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 8,
+                    "max_hcp": 99,
+                    "shape": "Ask 4c Major",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Stayman.",
+                    "deep_dive": "Artificial. Asks opener for a 4-card major. Requires 8+ points (invitational values) to ensure safety if no fit found."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2D": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 99,
+                    "shape": "5+ Hearts",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Jacoby Transfer to Hearts.",
+                    "deep_dive": "Artificial. Commands opener to bid 2H. Responder can pass with weak hands or bid again with strong hands."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2H": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 99,
+                    "shape": "5+ Spades",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Jacoby Transfer to Spades.",
+                    "deep_dive": "Artificial. Commands opener to bid 2S. Responder can pass with weak hands or bid again with strong hands."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2S": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 9,
+                    "shape": "6+ Clubs",
+                    "forcing": false
+                },
+                "teaching": {
+                    "nuance": "Sign-off (Clubs).",
+                    "deep_dive": "Standard SAYC treats 2S as a sign-off in clubs (opener passes 2S? No, opener must bid 3C usually, or 2S is played as alertable minor sign-off). *Common Variation*: Some play 2S as range ask or invite."
+                },
+                "meta": {
+                    "source": "SAYC Booklet (Interpretation)",
+                    "confidence": "Medium"
+                },
+                "responses": {}
+            },
+            "2NT": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 8,
+                    "max_hcp": 9,
+                    "shape": "Balanced",
+                    "forcing": false
+                },
+                "teaching": {
+                    "nuance": "Invitational.",
+                    "deep_dive": "Invites opener to bid 3NT with a maximum (17) or good 16."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    },
+    "2C": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 22,
+            "max_hcp": 99,
+            "shape": "Any",
+            "forcing": true
+        },
+        "teaching": {
+            "nuance": "Strong Artificial.",
+            "deep_dive": "Shows 22+ HCP or a hand within one trick of game. Forcing to game (usually)."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "2D": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 7,
+                    "shape": "Any (Waiting)",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Waiting.",
+                    "deep_dive": "Artificial negative or waiting bid. Allows opener to define their hand."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2H": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 8,
+                    "max_hcp": 99,
+                    "shape": "5+ Hearts (Good suit)",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Positive Response.",
+                    "deep_dive": "Shows 8+ points and a good 5-card suit."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2S": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 8,
+                    "max_hcp": 99,
+                    "shape": "5+ Spades (Good suit)",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Positive Response.",
+                    "deep_dive": "Shows 8+ points and a good 5-card suit."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "2NT": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 8,
+                    "max_hcp": 99,
+                    "shape": "Balanced",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Positive Balanced.",
+                    "deep_dive": "Shows 8+ points, balanced hand."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    },
+    "2D": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 5,
+            "max_hcp": 11,
+            "shape": "6 Diamonds",
+            "forcing": false
+        },
+        "teaching": {
+            "nuance": "Weak Two.",
+            "deep_dive": "Good 6-card suit, 5-11 HCP. No 4-card major typically."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "2NT": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 14,
+                    "max_hcp": 99,
+                    "shape": "Strong inquire",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Feature Ask.",
+                    "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit if they have a maximum hand. If minimum, rebid suit."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    },
+    "2H": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 5,
+            "max_hcp": 11,
+            "shape": "6 Hearts",
+            "forcing": false
+        },
+        "teaching": {
+            "nuance": "Weak Two.",
+            "deep_dive": "Good 6-card suit, 5-11 HCP."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "2NT": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 14,
+                    "max_hcp": 99,
+                    "shape": "Strong inquire",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Feature Ask.",
+                    "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    },
+    "2S": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 5,
+            "max_hcp": 11,
+            "shape": "6 Spades",
+            "forcing": false
+        },
+        "teaching": {
+            "nuance": "Weak Two.",
+            "deep_dive": "Good 6-card suit, 5-11 HCP."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "2NT": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 14,
+                    "max_hcp": 99,
+                    "shape": "Strong inquire",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Feature Ask.",
+                    "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    },
+    "2NT": {
+        "type": "Opening",
+        "logic": {
+            "min_hcp": 20,
+            "max_hcp": 21,
+            "shape": "Balanced",
+            "forcing": false
+        },
+        "teaching": {
+            "nuance": "Strong Balanced.",
+            "deep_dive": "20-21 HCP balanced hand. System ON (Transfers apply)."
+        },
+        "meta": {
+            "source": "SAYC Booklet",
+            "confidence": "High"
+        },
+        "responses": {
+            "3C": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 4,
+                    "max_hcp": 99,
+                    "shape": "Ask 4c Major",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Stayman.",
+                    "deep_dive": "Asks for 4-card major."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "3D": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 99,
+                    "shape": "5+ Hearts",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Jacoby Transfer to Hearts.",
+                    "deep_dive": "Commands opener to bid 3H."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            },
+            "3H": {
+                "type": "Response",
+                "logic": {
+                    "min_hcp": 0,
+                    "max_hcp": 99,
+                    "shape": "5+ Spades",
+                    "forcing": true
+                },
+                "teaching": {
+                    "nuance": "Jacoby Transfer to Spades.",
+                    "deep_dive": "Commands opener to bid 3S."
+                },
+                "meta": {
+                    "source": "SAYC Booklet",
+                    "confidence": "High"
+                },
+                "responses": {}
+            }
+        }
+    }
+}
