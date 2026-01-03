@@ -1,0 +1,1472 @@
+{
+  "1H": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "5+ cards",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Standard major opening.",
+      "deep_dive": "Normally open five-card majors in all seats. Open the higher of long suits of equal length: 5-5 or 6-6."
+    },
+    "meta": {
+      "source": "SAYC Booklet Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Spades",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Natural, forces opener to bid.",
+          "deep_dive": "Shows at least four spades, 6 or more points. Tends to deny a heart fit."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 9,
+          "shape": "Balanced / No 4+ Spade / No 3+ Heart",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Constructive but non-forcing.",
+          "deep_dive": "6-9 points, denies four spades or three hearts. NOT forcing."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Clubs",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response (Standard SAYC style).",
+          "deep_dive": "10 points or more, promises at least four of the suit. Note: Responder promises to bid again unless opener's rebid is at the game level."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3, Page 4",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Diamonds",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response (Standard SAYC style).",
+          "deep_dive": "10 points or more, promises at least four of the suit. Note: Responder promises to bid again unless opener's rebid is at the game level."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3, Page 4",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "3+ Hearts",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Raise.",
+          "deep_dive": "Three-card or longer heart support; 6-10 dummy points."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 13,
+          "max_hcp": 99,
+          "shape": "4+ Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby 2NT.",
+          "deep_dive": "Game-forcing raise (Jacoby 2NT), 13+ dummy points. Asks opener to show a short suit to help responder evaluate slam prospects."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {
+          "3C": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Club",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3D": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Diamond",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Spade",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 18,
+              "max_hcp": 21,
+              "shape": "No Shortness",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Maximum Hand.",
+              "deep_dive": "Maximum hand (18+) with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 15,
+              "max_hcp": 17,
+              "shape": "No Shortness",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Medium Hand.",
+              "deep_dive": "Medium hand (15-17) with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "4H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "No Shortness",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum Hand.",
+              "deep_dive": "Minimum hand with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          }
+        }
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Clubs",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Diamonds",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 11,
+          "shape": "3+ Hearts",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Limit Raise.",
+          "deep_dive": "Limit raise (10-11 dummy points with three or more hearts)."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 15,
+          "max_hcp": 17,
+          "shape": "Balanced, 2-card support",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Balanced Choice.",
+          "deep_dive": "15-17 HCP, balanced hand with two-card support for partner."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "4H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 9,
+          "shape": "5+ Hearts, Singleton/Void",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Preemptive Raise.",
+          "deep_dive": "Usually five+ hearts, a singleton or void, and fewer than 10 HCP."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "1S": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "5+ cards",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Standard major opening.",
+      "deep_dive": "Normally open five-card majors in all seats."
+    },
+    "meta": {
+      "source": "SAYC Booklet Page 1",
+      "confidence": "High"
+    },
+    "responses": {
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 9,
+          "shape": "Balanced / No 3+ Spade support",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Constructive but non-forcing.",
+          "deep_dive": "6-9 points, denies four spades (obviously) or three hearts (context implies no fit). NOT forcing."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Clubs",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response.",
+          "deep_dive": "10 points or more, promises at least four of the suit. Forcing one round."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3, Page 4",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Diamonds",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response.",
+          "deep_dive": "10 points or more, promises at least four of the suit. Forcing one round."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3, Page 4",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "5+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response.",
+          "deep_dive": "10 points or more. Treated as 2/1 forcing one round logic (implied by 2/1 logic on Page 3/4 even if not explicitly listed in bullet points on Page 3)."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3, Page 4",
+          "confidence": "Medium"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "3+ Spades",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Simple Raise.",
+          "deep_dive": "Three-card or longer support; 6-10 dummy points."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 13,
+          "max_hcp": 99,
+          "shape": "4+ Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby 2NT.",
+          "deep_dive": "Game-forcing raise (Jacoby 2NT), 13+ dummy points. Asks opener to show a short suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {
+          "3C": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Club",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3D": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Diamond",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3H": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 21,
+              "shape": "Singleton/Void Heart",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Shortness showing.",
+              "deep_dive": "Singleton or void in that suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 18,
+              "max_hcp": 21,
+              "shape": "No Shortness",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Maximum Hand.",
+              "deep_dive": "Maximum hand (18+) with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "3NT": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 15,
+              "max_hcp": 17,
+              "shape": "No Shortness",
+              "forcing": true
+            },
+            "teaching": {
+              "nuance": "Medium Hand.",
+              "deep_dive": "Medium hand (15-17) with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          },
+          "4S": {
+            "type": "Rebid",
+            "logic": {
+              "min_hcp": 12,
+              "max_hcp": 14,
+              "shape": "No Shortness",
+              "forcing": false
+            },
+            "teaching": {
+              "nuance": "Minimum Hand.",
+              "deep_dive": "Minimum hand with no short suit."
+            },
+            "meta": {
+              "source": "SAYC Booklet Page 3",
+              "confidence": "High"
+            },
+            "responses": {}
+          }
+        }
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Clubs",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Diamonds",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shifts. Invites a slam."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 11,
+          "shape": "3+ Spades",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Limit Raise.",
+          "deep_dive": "Limit raise (10-11 dummy points with three or more spades)."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 15,
+          "max_hcp": 17,
+          "shape": "Balanced, 2-card support",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Balanced Choice.",
+          "deep_dive": "15-17 HCP, balanced hand with two-card support for partner."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "4S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 9,
+          "shape": "5+ Spades, Singleton/Void",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Preemptive Raise.",
+          "deep_dive": "Usually five+ spades, a singleton or void, and fewer than 10 HCP."
+        },
+        "meta": {
+          "source": "SAYC Booklet Page 3",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "1C": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "3+ Clubs",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Convenient Minor.",
+      "deep_dive": "Bid 1C with 3+ clubs. If 3-3 in minors, bid 1C. If 4-4 in minors, bid 1D (Standard) or 1C (if 4-4-3-2). 1C is the catch-all opening."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "1D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Diamonds",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Up the line.",
+          "deep_dive": "Shows 4+ diamonds, 6+ points. Tends to deny a 4-card major if 1D is chosen over 1H/1S (though 1H/1S would be bid if held)."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Show major.",
+          "deep_dive": "Shows 4+ hearts, 6+ points. Always show a 4-card major if possible."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Spades",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Show major.",
+          "deep_dive": "Shows 4+ spades, 6+ points. Always show a 4-card major if possible."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "Balanced, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Non-forcing balance.",
+          "deep_dive": "6-10 HCP, balanced hand, no 4-card major. Non-forcing."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Clubs, No 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Inverted Minor (Strong).",
+          "deep_dive": "10+ HCP, 4+ card support, denies 4-card major. Forcing for at least one round (often Game Forcing in modern treatments, but F1 minimum)."
+        },
+        "meta": {
+          "source": "User Override (Inverted)",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Diamonds",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift (Soloway/Standard), 17+ HCP or strong quality suit. Slam interest."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift (Soloway/Standard), 17+ HCP or strong quality suit. Slam interest."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift (Soloway/Standard), 17+ HCP or strong quality suit. Slam interest."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 11,
+          "max_hcp": 12,
+          "shape": "Balanced, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational.",
+          "deep_dive": "11-12 HCP, balanced, invitational. Denies 4-card major."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 9,
+          "shape": "5+ Clubs, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Inverted Minor (Weak).",
+          "deep_dive": "Weak raise (Preemptive). Usually 0-6 HCP (sometimes up to 9 depending on vul), 5+ clubs."
+        },
+        "meta": {
+          "source": "User Override (Inverted)",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "1D": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 12,
+      "max_hcp": 21,
+      "shape": "3+ Diamonds",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Standard Minor.",
+      "deep_dive": "Normally 4+ diamonds, but can be 3 if hand is 4-4-3-2 (4S 4H 3D 2C). Bid 1D."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "1H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Hearts",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Show major.",
+          "deep_dive": "Shows 4+ hearts, 6+ points. Always show a 4-card major if possible."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 99,
+          "shape": "4+ Spades",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "Show major.",
+          "deep_dive": "Shows 4+ spades, 6+ points. Always show a 4-card major if possible."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "1NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 6,
+          "max_hcp": 10,
+          "shape": "Balanced, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Non-forcing balance.",
+          "deep_dive": "6-10 HCP, balanced hand, no 4-card major. Non-forcing."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Clubs",
+          "forcing": "1-round"
+        },
+        "teaching": {
+          "nuance": "2/1 Response.",
+          "deep_dive": "10+ HCP, 4+ clubs. Standard 2/1 response, forcing for one round."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 10,
+          "max_hcp": 99,
+          "shape": "4+ Diamonds, No 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Inverted Minor (Strong).",
+          "deep_dive": "10+ HCP, 4+ card support, denies 4-card major. Forcing."
+        },
+        "meta": {
+          "source": "User Override (Inverted)",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift (Soloway/Standard), 17+ HCP or strong quality suit. Slam interest."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift (Soloway/Standard), 17+ HCP or strong quality suit. Slam interest."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 11,
+          "max_hcp": 12,
+          "shape": "Balanced, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational.",
+          "deep_dive": "11-12 HCP, balanced, invitational. Denies 4-card major."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 17,
+          "max_hcp": 99,
+          "shape": "Strong Clubs",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Strong Jump Shift.",
+          "deep_dive": "Strong jump shift. 17+ HCP or strong suit. (Note: 1D-3C is a jump shift, 1D-2C is natural)."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 9,
+          "shape": "5+ Diamonds, No 4c Major",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Inverted Minor (Weak).",
+          "deep_dive": "Weak raise (Preemptive). Usually 0-6 HCP (sometimes up to 9 depending on vul), 5+ diamonds."
+        },
+        "meta": {
+          "source": "User Override (Inverted)",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "1NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 15,
+      "max_hcp": 17,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Standard No Trump.",
+      "deep_dive": "15-17 HCP balanced hand. May have a 5-card major (usually spread 5-3-3-2). System ON (Stayman, Transfers)."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "2C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 99,
+          "shape": "Ask 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Stayman.",
+          "deep_dive": "Artificial. Asks opener for a 4-card major. Requires 8+ points (invitational values) to ensure safety if no fit found."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 99,
+          "shape": "5+ Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Hearts.",
+          "deep_dive": "Artificial. Commands opener to bid 2H. Responder can pass with weak hands or bid again with strong hands."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 99,
+          "shape": "5+ Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Spades.",
+          "deep_dive": "Artificial. Commands opener to bid 2S. Responder can pass with weak hands or bid again with strong hands."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 9,
+          "shape": "6+ Clubs",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Sign-off (Clubs).",
+          "deep_dive": "Standard SAYC treats 2S as a sign-off in clubs (opener passes 2S? No, opener must bid 3C usually, or 2S is played as alertable minor sign-off). *Common Variation*: Some play 2S as range ask or invite."
+        },
+        "meta": {
+          "source": "SAYC Booklet (Interpretation)",
+          "confidence": "Medium"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 9,
+          "shape": "Balanced",
+          "forcing": false
+        },
+        "teaching": {
+          "nuance": "Invitational.",
+          "deep_dive": "Invites opener to bid 3NT with a maximum (17) or good 16."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "2C": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 22,
+      "max_hcp": 99,
+      "shape": "Any",
+      "forcing": true
+    },
+    "teaching": {
+      "nuance": "Strong Artificial.",
+      "deep_dive": "Shows 22+ HCP or a hand within one trick of game. Forcing to game (usually)."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "2D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 7,
+          "shape": "Any (Waiting)",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Waiting.",
+          "deep_dive": "Artificial negative or waiting bid. Allows opener to define their hand."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 99,
+          "shape": "5+ Hearts (Good suit)",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Positive Response.",
+          "deep_dive": "Shows 8+ points and a good 5-card suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2S": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 99,
+          "shape": "5+ Spades (Good suit)",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Positive Response.",
+          "deep_dive": "Shows 8+ points and a good 5-card suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 8,
+          "max_hcp": 99,
+          "shape": "Balanced",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Positive Balanced.",
+          "deep_dive": "Shows 8+ points, balanced hand."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "2D": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6 Diamonds",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two.",
+      "deep_dive": "Good 6-card suit, 5-11 HCP. No 4-card major typically."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 14,
+          "max_hcp": 99,
+          "shape": "Strong inquire",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Feature Ask.",
+          "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit if they have a maximum hand. If minimum, rebid suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "2H": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6 Hearts",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two.",
+      "deep_dive": "Good 6-card suit, 5-11 HCP."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 14,
+          "max_hcp": 99,
+          "shape": "Strong inquire",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Feature Ask.",
+          "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "2S": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 5,
+      "max_hcp": 11,
+      "shape": "6 Spades",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Weak Two.",
+      "deep_dive": "Good 6-card suit, 5-11 HCP."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "2NT": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 14,
+          "max_hcp": 99,
+          "shape": "Strong inquire",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Feature Ask.",
+          "deep_dive": "Asks opener to show a 'feature' (A or K) in a side suit."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  },
+  "2NT": {
+    "type": "Opening",
+    "logic": {
+      "min_hcp": 20,
+      "max_hcp": 21,
+      "shape": "Balanced",
+      "forcing": false
+    },
+    "teaching": {
+      "nuance": "Strong Balanced.",
+      "deep_dive": "20-21 HCP balanced hand. System ON (Transfers apply)."
+    },
+    "meta": {
+      "source": "SAYC Booklet",
+      "confidence": "High"
+    },
+    "responses": {
+      "3C": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 4,
+          "max_hcp": 99,
+          "shape": "Ask 4c Major",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Stayman.",
+          "deep_dive": "Asks for 4-card major."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3D": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 99,
+          "shape": "5+ Hearts",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Hearts.",
+          "deep_dive": "Commands opener to bid 3H."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      },
+      "3H": {
+        "type": "Response",
+        "logic": {
+          "min_hcp": 0,
+          "max_hcp": 99,
+          "shape": "5+ Spades",
+          "forcing": true
+        },
+        "teaching": {
+          "nuance": "Jacoby Transfer to Spades.",
+          "deep_dive": "Commands opener to bid 3S."
+        },
+        "meta": {
+          "source": "SAYC Booklet",
+          "confidence": "High"
+        },
+        "responses": {}
+      }
+    }
+  }
+}
